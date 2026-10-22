@@ -38,7 +38,11 @@ Hiding a skill in SkillShelf doesn't disable it in your agent.
 
 ## Install and launch
 
-Install **Python 3.10+** and **Node.js 22.12+**. Download or clone this repository, open a terminal in its folder, and run:
+**Windows x64:** download `SkillShelf-Setup-<version>-x64.exe` from [GitHub Releases](https://github.com/nlk12367/SkillShelf/releases/latest), run the installer, then open SkillShelf from the desktop or Start menu. Electron (including Node.js) and Python are bundled; no separate runtime installation is needed. The installer works offline after download.
+
+This release is unsigned, so Windows may show a publisher or SmartScreen prompt. Download only from this repository's Releases page.
+
+**Run from source:** install **Python 3.10+** and **Node.js 22.12+**, download or clone this repository, open a terminal in its folder, and run:
 
 ```sh
 npm install

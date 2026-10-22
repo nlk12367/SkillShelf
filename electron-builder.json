@@ -1,0 +1,32 @@
+{
+  "appId": "io.github.nlk12367.skillshelf",
+  "productName": "SkillShelf",
+  "copyright": "Copyright © 2026 SkillShelf contributors",
+  "directories": {"output": "dist/windows", "buildResources": "assets"},
+  "asar": true,
+  "npmRebuild": false,
+  "files": ["package.json", "desktop/main.cjs", "desktop/preload.cjs", "desktop/catalog.cjs", "desktop/resources.cjs", "desktop/runtime.cjs", "assets/app-icon.ico", "assets/app-icon.png", "LICENSE", "THIRD_PARTY_NOTICES.md"],
+  "extraResources": [
+    {"from": "dist/package-runtime/python", "to": "python", "filter": ["**/*"]},
+    {"from": "dist/package-runtime/tool", "to": "tool", "filter": ["**/*"]}
+  ],
+  "win": {
+    "target": [{"target": "nsis", "arch": ["x64"]}],
+    "icon": "assets/app-icon.ico",
+    "artifactName": "SkillShelf-Setup-${version}-${arch}.${ext}",
+    "requestedExecutionLevel": "asInvoker"
+  },
+  "nsis": {
+    "oneClick": false,
+    "perMachine": false,
+    "allowElevation": false,
+    "allowToChangeInstallationDirectory": true,
+    "createDesktopShortcut": "always",
+    "shortcutName": "SkillShelf",
+    "runAfterFinish": true,
+    "deleteAppDataOnUninstall": false,
+    "installerLanguages": ["en_US", "zh_TW"],
+    "language": "1028",
+    "license": "LICENSE"
+  }
+}

@@ -1,20 +1,31 @@
 {
   "name": "skillshelf",
   "productName": "SkillShelf",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "private": true,
   "main": "desktop/main.cjs",
   "description": "Discover, organize, and use your agent skills.",
   "license": "MIT",
-  "engines": {"node": ">=22.12.0"},
+  "engines": {
+    "node": ">=22.12.0"
+  },
   "scripts": {
     "test": "node verify-tool.cjs",
     "desktop": "node desktop/start.cjs",
     "test:desktop": "node verify-desktop.cjs",
-    "test:refresh": "node verify-refresh.cjs"
+    "test:refresh": "node verify-refresh.cjs",
+    "dist:win": "node scripts/prepare-windows.cjs && electron-builder --config electron-builder.json --win nsis --x64 --publish never",
+    "test:packaged": "node verify-packaged.cjs"
   },
   "devDependencies": {
     "electron": "45.0.0",
+    "electron-builder": "26.15.3",
     "playwright": "1.62.1"
-  }
+  },
+  "author": "SkillShelf contributors",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nlk12367/SkillShelf.git"
+  },
+  "homepage": "https://github.com/nlk12367/SkillShelf"
 }

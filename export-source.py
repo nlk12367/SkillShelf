@@ -16,6 +16,7 @@ FILES = [
     'assets/app-icon.png', 'assets/app-icon-128.png', 'assets/app-icon-32.png',
     'assets/app-icon.ico', 'assets/icon-prompt.md',
     'create-desktop-shortcut.ps1', '.gitattributes',
+    'desktop/runtime.cjs', 'electron-builder.json', 'scripts/prepare-windows.cjs', 'scripts/verify-installer.ps1', 'verify-packaged.cjs',
 ]
 
 

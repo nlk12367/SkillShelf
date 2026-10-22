@@ -15,7 +15,9 @@ SkillShelf 將不同來源的 `SKILL.md` 整理成同一份可搜尋清單，協
 
 ## 快速啟動
 
-桌面版需要 Python 3.10 以上、Node.js 22.12 以上。解壓縮原始碼後，在工具資料夾開啟終端機：
+Windows 64 位元使用者可從 [GitHub Releases](https://github.com/nlk12367/SkillShelf/releases/latest) 下載 `.exe` 安裝檔，內含 Electron、Node.js 與 Python，可離線安裝；安裝後不需執行 npm。此版本未簽署程式碼憑證，Windows 可能顯示發行者或 SmartScreen 提示。
+
+從原始碼執行時需要 Python 3.10 以上、Node.js 22.12 以上。解壓縮原始碼後，在工具資料夾開啟終端機：
 
 ```sh
 npm install
@@ -112,7 +114,7 @@ Plugin cache 依 `marketplace/plugin/version` 結構探索，辨識 `.codex-plug
 
 ## 設定與持久化
 
-掃描來源的 `./`、`../` 相對於**工具所在資料夾**，`~/` 對應使用者家目錄；`~/.codex` 優先採用 `CODEX_HOME`。工具不綁定特定 Windows 帳號。
+掃描來源的 `./`、`../` 相對於**掃描設定檔所在資料夾**，`~/` 對應使用者家目錄；`~/.codex` 優先採用 `CODEX_HOME`。工具不綁定特定 Windows 帳號。原始碼版的設定檔與清單位於工具資料夾；Windows 安裝版位於 `%APPDATA%\SkillShelf\catalog`。若沿用舊版 profile，則位於舊 profile 的 `catalog` 子資料夾；使用 `SKILLS_TOOL_USER_DATA` 時位於指定 profile 的 `catalog`。安裝目錄只存放程式與內附執行環境。
 
 ```json
 {
@@ -123,9 +125,9 @@ Plugin cache 依 `marketplace/plugin/version` 結構探索，辨識 `.codex-plug
 }
 ```
 
-在「管理與來源 → 設定掃描來源」按「下載掃描設定」，會取得 `skills-config.json`；放回工具資料夾後，於桌面版按「更新 Skills 清單」套用。這與「匯出管理設定」產生的 `skills-preferences.json` 不同，後者只搬移收藏與隱藏，不改掃描來源。兩者都不會直接覆寫 Agent 的設定。
+在「管理與來源 → 設定掃描來源」按「下載掃描設定」，會取得 `skills-config.json`；將它放回上述清單資料夾後，於桌面版按「更新 Skills 清單」套用。這與「匯出管理設定」產生的 `skills-preferences.json` 不同，後者只搬移收藏與隱藏，不改掃描來源。兩者都不會直接覆寫 Agent 的設定。
 
-收藏、隱藏、最近查看與資源清單存在 localStorage；任務文字只保留於目前頁面，關閉或重新載入會失去。桌面版與瀏覽器版的儲存空間不共用，管理設定匯出僅包含收藏與隱藏。`SKILLS_TOOL_USER_DATA` 可指定 Electron profile 資料夾，`SKILLS_TOOL_PYTHON` 可指定桌面版使用的 Python 執行檔。
+收藏、隱藏、最近查看與資源清單存在 localStorage；任務文字只保留於目前頁面，關閉或重新載入會失去。桌面版與瀏覽器版的儲存空間不共用，管理設定匯出僅包含收藏與隱藏。`SKILLS_TOOL_USER_DATA` 可指定 Electron profile 資料夾；`SKILLS_TOOL_PYTHON` 可指定原始碼版使用的 Python 執行檔，安裝版固定使用內附 Python。
 
 產生的 HTML 與索引含有本機 Skill 原文及來源路徑，不宜直接作為開源發布檔案。原始碼匯出採明確白名單排除這些產物。
 
@@ -149,6 +151,8 @@ Main 對 IPC 檢查視窗、主 frame 與本機頁面 URL，阻擋頁面導向�
 | Windows 桌面捷徑 | `create-desktop-shortcut.ps1`，以目前資料夾及使用者桌面產生 SkillShelf 捷徑 |
 | 原生路徑與貼上 | `desktop/resources.cjs`、`desktop/read-file-clipboard.py` |
 | 按鈕重新掃描 | `desktop/catalog.cjs`、`tool.js` 的 `refreshSkills()` |
+| 原始碼版／安裝版的執行環境與資料路徑 | `desktop/runtime.cjs` |
+| Windows 安裝檔建置與實際安裝驗證 | `electron-builder.json`、`scripts/prepare-windows.cjs`、`scripts/verify-installer.ps1`、`verify-packaged.cjs` |
 | 開源包檔案白名單 | `export-source.py` |
 
 在專案目錄執行：
@@ -184,11 +188,17 @@ Remove-Item Env:SKILLS_TOOL_REAL_CATALOG
 | Electron 資源整合 | 9 項通過 |
 | 更新按鈕與狀態保留 | 9 項通過，確認沒有頁面重載與程序重啟 |
 | 原始碼搬移與相對路徑 | 4 項檢查通過 |
+| Windows 安裝版（PATH 隔離） | 9 項通過：內附 Python、掃描、拖曳／貼上、Markdown、即時更新與儲存 |
+| NSIS 安裝與卸載 | 實際安裝、註冊、可見視窗、卸載與舊捷徑還原通過 |
 
 重新執行對應腳本會產生 `verification-results.json`、`desktop-verification-results.json`、`refresh-verification-results.json` 與 `portable-verification-results.json`。這些是個別測試環境的報告，不收錄於開源包。
 
 ## 開源發布
 
-執行 `python export-source.py` 會產生 `dist/skillshelf-source.zip`，收錄程式、設定、用途表與說明，不包含本機生成索引、Skill 原文、資源清單、測試截圖及 `node_modules`。下載者需自行安裝依賴並掃描自己的來源，目前尚未提供已封裝的桌面安裝程式。
+執行 `python export-source.py` 會產生 `dist/skillshelf-source.zip`，收錄程式、設定、用途表與說明，不包含本機生成索引、Skill 原文、資源清單、測試截圖及 `node_modules`。原始碼使用者需自行安裝依賴；Windows 使用者可直接下載 Releases 的安裝檔。
+
+在 Windows x64 開發環境執行 `npm ci`、`npm run dist:win`，會下載並校驗 Python 3.14.9 官方嵌入式套件，再以 electron-builder 26.15.3 / NSIS 產生 `dist/windows/SkillShelf-Setup-0.4.0-x64.exe`。`electron-builder.json` 與 `scripts/prepare-windows.cjs` 使用明確檔案白名單；既有 Skills、產生的 HTML／索引與個人 profile 不會成為安裝檔內容。安裝不需系統管理員權限，建立桌面與開始功能表捷徑，卸載時保留使用者資料。
+
+`npm run test:packaged` 驗證打包版；`powershell -NoProfile -ExecutionPolicy Bypass -File scripts/verify-installer.ps1` 會實際安裝到隔離目錄、跑安裝版功能測試及顯示視窗，再卸載並還原原有捷徑。為避免改動既有安裝，此腳本要求目前使用者尚未安裝 SkillShelf。測試將 App 的 PATH 限制為 Windows System32，並指定不存在的系統 Python，確認掃描與貼上使用內附環境；這不等同於已在另一台乾淨 Windows 虛擬機驗證。
 
 工具程式採 MIT 授權；外部 Skills 維持各自授權，詳見 [LICENSE](LICENSE) 與 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md)。

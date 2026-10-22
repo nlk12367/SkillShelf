@@ -2,9 +2,11 @@
 import importlib.util
 import base64
 import json
+import os
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parent
+DATA = Path(os.environ.get('SKILLS_TOOL_DATA_DIR', str(BASE))).resolve()
 CATEGORIES = ['簡報與文件', '網頁與介面', '圖片與設計', '3D 與場景', '動畫與互動',
               '遊戲開發', 'Godot', 'Unity', 'Unreal', 'Roblox', '研究與寫作', '工具與程式',
               '程式與架構', '資料與 API', '測試與資安', '部署與維運', 'AI 與 Agents', '商務與營運']
@@ -14,7 +16,8 @@ def build():
     spec = importlib.util.spec_from_file_location('skill_scanner', BASE / 'scan-skills.py')
     scanner = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(scanner)
-    raw = scanner.scan(verbose=False)
+    DATA.mkdir(parents=True, exist_ok=True)
+    raw = scanner.scan(verbose=False, base=DATA)
     guides = {}
     guide_text = '\n'.join((BASE / filename).read_text(encoding='utf-8')
                            for filename in ('skill-guide.tsv', 'plugin-guide.tsv'))
@@ -52,8 +55,8 @@ def build():
     html = html.replace('/*__STYLES__*/', (BASE / 'tool.css').read_text(encoding='utf-8'))
     html = html.replace('/*__DATA__*/', data)
     html = html.replace('/*__APP__*/', (BASE / 'tool.js').read_text(encoding='utf-8'))
-    (BASE / 'Skills查詢工具.html').write_text(html, encoding='utf-8')
-    (BASE / 'skills-index.json').write_text(json.dumps(raw, ensure_ascii=False, indent=2), encoding='utf-8')
+    (DATA / 'Skills查詢工具.html').write_text(html, encoding='utf-8')
+    (DATA / 'skills-index.json').write_text(json.dumps(raw, ensure_ascii=False, indent=2), encoding='utf-8')
     return {'files': len(raw['skills']), 'uniqueNames': raw['uniqueNames'], 'scannedAt': raw['scannedAt'],
             'guideCoverage': sum(s['hasGuide'] for s in raw['skills'])}
 

@@ -2,10 +2,7 @@
 const fs=require('node:fs');
 const path=require('node:path');
 const {fileURLToPath}=require('node:url');
-const {execFile}=require('node:child_process');
-const {promisify}=require('node:util');
-const execute=promisify(execFile);
-const BASE=path.resolve(__dirname,'..');
+const {runPython}=require('./runtime.cjs');
 
 function inspectPaths(paths) {
   if(!Array.isArray(paths)||paths.length>100||paths.some(value=>typeof value!=='string'||value.length>32768||value.includes('\0')))throw new Error('檔案清單格式不正確，最多可加入 100 個檔案。');
@@ -21,8 +18,7 @@ function inspectPaths(paths) {
 
 async function clipboardResources(clipboard) {
   if(process.platform==='win32') {
-    const python=process.env.SKILLS_TOOL_PYTHON||'python';
-    const result=await execute(python,['-X','utf8',path.join(BASE,'desktop','read-file-clipboard.py')],{encoding:'utf8',windowsHide:true,timeout:10000,maxBuffer:1024*1024});
+    const result=await runPython('desktop/read-file-clipboard.py',{timeout:10000});
     const paths=JSON.parse(result.stdout);
     if(paths.length)return inspectPaths(paths);
   }

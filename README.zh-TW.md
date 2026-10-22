@@ -44,7 +44,11 @@ SkillShelf 讓你依照要做的事情，搜尋與管理已安裝的 Agent Skill
 
 ## 安裝與啟動
 
-先安裝 **Python 3.10 以上**與 **Node.js 22.12 以上**。下載或 clone 本專案，在專案資料夾開啟終端機：
+**Windows 64 位元：**到 [GitHub Releases](https://github.com/nlk12367/SkillShelf/releases/latest) 下載 `SkillShelf-Setup-<版本>-x64.exe`，執行安裝後，從桌面或開始功能表開啟 SkillShelf。已內含 Electron（包含 Node.js）與 Python，不需另外安裝執行環境；下載完成後可離線安裝。
+
+此版本尚未簽署程式碼憑證，Windows 可能顯示發行者或 SmartScreen 提示。請從本專案的 Releases 頁下載。
+
+**從原始碼執行：**先安裝 **Python 3.10 以上**與 **Node.js 22.12 以上**。下載或 clone 本專案，在專案資料夾開啟終端機：
 
 ```sh
 npm install

@@ -5,8 +5,8 @@ const fs=require('node:fs');
 const {pathToFileURL}=require('node:url');
 const {inspectPaths,clipboardResources}=require('./resources.cjs');
 const {refreshCatalog}=require('./catalog.cjs');
-const HTML=path.resolve(__dirname,'..','Skills查詢工具.html');
-const EXPECTED=pathToFileURL(HTML).href;
+const {locations}=require('./runtime.cjs');
+let EXPECTED;
 let mainWindow;
 
 function requireMainFrame(event) {
@@ -25,6 +25,9 @@ if(!app.requestSingleInstanceLock())app.quit();
 else{
 app.on('second-instance',()=>{if(mainWindow){mainWindow.webContents.reloadIgnoringCache();mainWindow.show();mainWindow.focus();}});
 app.whenReady().then(async()=>{
+  const paths=locations();
+  if(paths.packaged)await refreshCatalog();
+  EXPECTED=pathToFileURL(paths.html).href;
   mainWindow=new BrowserWindow({width:1440,height:1000,minWidth:860,minHeight:680,show:false,
     icon:path.join(__dirname,'..','assets',process.platform==='win32'?'app-icon.ico':'app-icon.png'),
     webPreferences:{preload:path.join(__dirname,'preload.cjs'),nodeIntegration:false,contextIsolation:true,sandbox:true,webSecurity:true}});
@@ -43,7 +46,7 @@ app.whenReady().then(async()=>{
   ipcMain.handle('resources:paste',async event=>{requireMainFrame(event);return clipboardResources(clipboard);});
   ipcMain.handle('prompt:copy',async(event,text)=>{requireMainFrame(event);if(typeof text!=='string'||text.length>4*1024*1024)throw new Error('複製內容格式不正確。');await clipboard.writeText(text);});
   mainWindow.on('closed',()=>{mainWindow=null;});
-  await mainWindow.loadFile(HTML);
+  await mainWindow.loadFile(paths.html);
   if(process.env.SKILLS_TOOL_TEST_MODE!=='1')mainWindow.show();
 }).catch(error=>{dialog.showErrorBox('SkillShelf',error.message);app.exit(1);});
 }
