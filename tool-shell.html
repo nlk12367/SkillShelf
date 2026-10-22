@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>SkillShelf</title>
+  <link rel="icon" type="image/png" href="assets/app-icon-32.png">
+  <style>/*__STYLES__*/</style>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" aria-label="工具分類">
+      <a class="brand" href="#" aria-label="SkillShelf 首頁"><img class="brand-icon" src="assets/app-icon-128.png" width="40" height="40" alt=""><span>SkillShelf<strong>技能工具箱</strong></span></a>
+      <p class="side-intro">把想做的事，找到對的工具。</p>
+      <nav id="categories" aria-label="Skill 分類"></nav>
+      <div class="sidebar-bottom"><button id="refresh" class="refresh" type="button">更新 Skills 清單</button><span id="scan-date"></span></div>
+    </aside>
+    <main>
+      <header class="topbar"><span class="breadcrumb">我的 Skills</span><div class="top-actions"><label class="sr-only" for="source">篩選 Skill 來源</label><select id="source"></select><button id="manage-open" type="button" class="plain-button">管理與來源</button><button id="help-open" type="button" class="plain-button">怎麼使用</button><span class="shortcut"><kbd>Ctrl</kbd><kbd>K</kbd> 搜尋</span></div></header>
+      <section class="search-section" aria-labelledby="page-title">
+        <div class="title-row"><div><h1 id="page-title">今天想做什麼？</h1><p class="lead">不用記住英文名稱。輸入需求，找到用得到的 Skill。</p></div><span class="index-stamp" id="index-stamp"></span></div>
+        <div class="search-wrap"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.7" cy="10.7" r="6.7"></circle><path d="m16 16 4.5 4.5"></path></svg><input id="search" type="search" autocomplete="off" spellcheck="false" aria-label="輸入想做的功能來搜尋 Skills" placeholder="例如：幫我做簡報、把截圖變網頁、製作海浪效果…"><button id="clear" class="clear" type="button" aria-label="清除搜尋" hidden>×</button></div>
+        <div class="suggestions"><span>試試看</span><button type="button" data-query="做簡報">做簡報</button><button type="button" data-query="畫流程圖">畫流程圖</button><button type="button" data-query="把截圖變網頁">截圖變網頁</button><button type="button" data-query="製作3D海浪">3D 海浪</button><button type="button" data-query="潤飾文章">潤飾文章</button></div>
+      </section>
+      <div class="work-area">
+        <section class="results-panel" aria-labelledby="results-title"><div class="results-heading"><div><h2 id="results-title">從常用需求開始</h2><span id="result-count" role="status" aria-live="polite"></span></div><select id="sort" aria-label="結果排序"><option value="recommended">依相關程度</option><option value="name">英文名稱 A–Z</option></select></div><div id="active-filter"></div><div id="results"></div><button id="load-more" class="load-more" type="button" hidden>顯示更多 Skills</button></section>
+        <aside class="detail-panel" id="detail-panel" aria-label="Skill 詳細資訊"><div id="detail"></div></aside>
+      </div>
+      <footer><span id="source-count"></span><span>中文用途依 Skill 原文整理</span></footer>
+    </main>
+  </div>
+  <dialog id="help"><div class="dialog-heading"><h2>找到 Skill，帶到 Codex 使用</h2><button type="button" id="help-close" class="plain-button" aria-label="關閉使用說明">關閉</button></div><ol class="help-steps"><li><strong>說出想做的事</strong><p>輸入「做簡報」或「讓 3D 角色可以點選」，也能搜尋英文名稱。</p></li><li><strong>確認中文用途</strong><p>點選結果，查看中文用途與完整 Skill 名稱。</p></li><li><strong>複製到 Codex</strong><p>第一行是 /Skill 名稱，在「任務」寫下需求，也能加入多筆資源路徑。按「複製使用指令」，再貼到 Codex。</p></li></ol><div class="help-note">複製內容包含 /Skill 名稱、任務與選填的資源清單，不會自動執行。</div><p class="help-note">以「開啟 SkillShelf.cmd」開啟可直接拖曳、貼上或選擇檔案。HTML 版仍可手動加入路徑；兩個版本都保留收藏與最近查看記錄。</p></dialog>
+  <div id="toast" role="status" aria-live="polite" hidden></div>
+  <dialog id="manager" class="manager"><div class="dialog-heading"><h2>管理 Skills 與掃描來源</h2><button id="manage-close" type="button" class="plain-button">關閉</button></div><div id="manager-body"></div></dialog>
+  <input id="import-preferences" type="file" accept="application/json,.json" hidden>
+  <script id="skill-data" type="application/json">/*__DATA__*/</script>
+  <script>/*__APP__*/</script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+# category|name|title|summary|keywords
+工具與程式|imagegen|生成與修改圖片|依文字或參考圖生成圖片，也能改圖、去背及製作透明素材。|圖片 照片 插畫 生圖 改圖 去背 透明 素材 image imagegen
+工具與程式|openai-docs|查 OpenAI 與 Codex 使用方式|查閱 OpenAI、ChatGPT、Codex 與 API 的官方使用文件。|官方文件 API OpenAI ChatGPT Codex 設定 模型
+工具與程式|review-agent|檢查程式變更中的問題|以唯讀方式審查指定程式變更，找出可採取行動的缺陷。|code review 程式碼審查 bug 錯誤 檢查 修改
+工具與程式|skill-creator|建立或改善 Skill|將重複工作整理成 Skill，或修改既有 Skill 的說明與資源。|技能 skills 建立 安裝 自訂 工作流程
+工具與程式|skill-installer|安裝新的 Skill|從官方清單或指定 GitHub 路徑安裝 Codex Skills。|技能 skills 安裝 新增 github
+研究與寫作|academy-guide|尋找 Claude 學習資源|依 Claude 的使用問題，尋找適合的官方課程與教學。|Claude 教學 課程 學習 academy
+圖片與設計|algorithmic-art|用程式製作生成藝術|使用 p5.js、隨機種子與互動參數製作粒子或流場藝術。|生成藝術 粒子 流場 p5 隨機 藝術
+圖片與設計|brand-guidelines|套用 Anthropic 品牌樣式|將 Anthropic 官方品牌色與字體規範套用到設計產出。|Anthropic 品牌 色彩 字體 規範
+圖片與設計|canvas-design|製作海報與靜態視覺|設計海報、平面作品與其他可輸出為 PNG 或 PDF 的靜態視覺。|海報 平面 視覺 PNG PDF 排版 設計
+工具與程式|claude-api|串接 Claude API|查詢與使用 Claude API、Anthropic SDK、工具呼叫及串流功能。|Claude Anthropic API SDK streaming 串流 模型
+研究與寫作|discernment-nudge|檢查回答的假設與缺漏|在適用情境提出具體追問，協助檢查推論、事實與遺漏的背景。|假設 推論 檢查 反思 追問
+研究與寫作|doc-coauthoring|一起撰寫企劃與技術文件|透過需求蒐集、反覆修訂與讀者檢查，完成提案或技術規格。|企劃 提案 文件 技術規格 報告 撰寫
+簡報與文件|docx|建立與編輯 Word 文件|製作、讀取與修改 Word 文件，處理格式、圖片、目錄及修訂。|Word docx 報告 文件 目錄 編輯 排版
+網頁與介面|frontend-design|設計有風格的網頁介面|規劃網頁的版面、字體與視覺方向，並製作介面。|網頁 網站 前端 介面 UI 設計 美化 landing page
+研究與寫作|internal-comms|撰寫內部公告與工作報告|整理進度更新、內部公告、FAQ、事件報告等組織溝通內容。|公告 週報 進度 FAQ 內部溝通 報告
+工具與程式|mcp-builder|建立 MCP 工具服務|建立 MCP server，讓 AI 透過工具存取外部 API 與服務。|MCP server API 串接 服務 工具
+簡報與文件|pdf|處理 PDF 文件|讀取文字與表格、合併或分割 PDF，也能建立檔案與處理 OCR。|PDF 合併 分割 OCR 掃描 文字 表格 文件
+簡報與文件|pptx|建立與編輯 PowerPoint 檔案|讀取、製作與修改真正的 .pptx 或 .potx 檔案與投影片範本。|簡報 投影片 PPT PowerPoint pptx 演講 模板 範本
+圖片與設計|slack-gif-creator|製作 Slack 動態貼圖|製作適合 Slack 使用的動畫 GIF，並檢查尺寸與播放限制。|GIF Slack 動圖 貼圖 動畫
+圖片與設計|theme-factory|替作品套用整體主題|為簡報、文件或 HTML 網頁套用一致的顏色與字體主題。|主題 顏色 配色 字體 樣式 風格
+網頁與介面|web-artifacts-builder|製作多元件互動網頁|使用 React 等前端工具製作需要狀態管理或路由的複雜互動網頁。|React 互動 網頁 元件 路由 前端 artifact
+工具與程式|webapp-testing|測試本地網頁是否正常|使用 Playwright 操作網頁，檢查互動、截圖與瀏覽器錯誤。|測試 網頁 Playwright bug 瀏覽器 截圖 錯誤 debug
+簡報與文件|xlsx|製作與整理 Excel 表格|讀寫 Excel、CSV 與 TSV，處理公式、資料清理、格式與圖表。|Excel xlsx csv 試算表 表格 公式 圖表 資料清理
+工具與程式|template-skill|Skill 空白範本|這是供撰寫新 Skill 使用的佔位範本，尚未定義具體工作功能。|Skill 範本 template
+簡報與文件|guizang-ppt-skill|製作網頁簡報|製作可左右翻頁的單檔 HTML 簡報，含講稿備註與演講者檢視。|簡報 投影片 PPT 演講 報告 HTML 網頁簡報 分享
+圖片與設計|drawio-skill|畫可編輯的流程圖與架構圖|建立或修改 draw.io 圖檔，適用流程、系統架構、UML 與泳道圖。|流程圖 架構圖 drawio draw.io diagrams 泳道 UML ERD User Flow 使用者流程
+研究與寫作|last30days|研究最近 30 天的討論|蒐集近 30 天社群與網路的實際討論、關注度及觀點。|研究 趨勢 最近 30天 社群 Reddit X 熱門 搜尋
+研究與寫作|claim-verification|查核說法與資訊來源|把新聞、貼文或他人結論拆成可驗證的主張，再用第一手來源查核。|查證 查核 事實 新聞 來源 證據 真假 fact check
+研究與寫作|sepia|改善文字的機械感|依文類調整敘事與措辭，可撰寫、診斷、局部修訂或重新改寫。|寫作 文字 潤稿 改寫 自然 去AI 文案
+研究與寫作|sepia-hemingway|以海明威式筆調寫故事|依內建的 Hemingway 風格設定撰寫或修訂小說。|小說 海明威 Hemingway 故事 寫作
+研究與寫作|sepia-recreate|完整改寫文章|依 Sepia 流程重新組織與改寫整篇文字。|改寫 重寫 文章 文字 文案
+研究與寫作|sepia-refactor|小幅潤飾原有文字|保留原文架構，以局部修改改善用字與表達。|潤稿 潤飾 修改 文字 小幅 自然 文案
+研究與寫作|sepia-review|找出文章的機械感|診斷原文中的問題與機械化表達，先提供評論而不直接改稿。|文章 審查 診斷 文風 機械感 評論
+研究與寫作|sepia-write|從需求撰寫自然文字|依 Sepia 的寫作規則，從頭撰寫故事或專業文字。|撰寫 寫作 文章 故事 專業 文字
+遊戲開發|ai-behavior-trees-utility-ai|設計 NPC 決策系統|建立行為樹與 Utility AI，控制敵人或 NPC 如何做決定。|NPC 敵人 AI 決策 行為樹 Utility 黑板
+遊戲開發|audio-design|設計遊戲音效與動態音樂|規劃混音、音效變化、動態音樂分層及節拍同步。|音效 音樂 聲音 混音 遊戲 節拍
+遊戲開發|awesome-gamedev-agent-skills|挑選適合的遊戲開發 Skill|依遊戲引擎、功能與發布需求，選出對應的專門 Skills。|遊戲 開發 引擎 選擇 入門
+遊戲開發|bevy-ecs|用 Bevy 建立遊戲架構|以 Rust 與 Bevy 的 ECS 設計元件、資源及遊戲系統。|Bevy Rust ECS 元件 系統 遊戲
+遊戲開發|camera-systems|製作跟隨與第三人稱鏡頭|設計平滑跟隨、鏡頭碰撞、視角環繞與多人取景。|鏡頭 相機 跟隨 第三人稱 第一人稱 抖動
+遊戲開發|card-game|製作卡牌遊戲|建立牌庫、手牌、抽牌、回合、費用與卡牌效果結算。|卡牌 牌組 抽牌 回合 牌庫 TCG
+遊戲開發|create-game-assets|規劃與製作遊戲美術素材|整理美術方向，製作或取得精靈圖、貼圖、圖示與背景素材。|素材 遊戲 美術 sprite 精靈圖 貼圖 圖示 背景
+遊戲開發|dialogue-systems|製作分支對話系統|建立帶選項、條件與變數的 NPC 對話及故事分支。|對話 NPC 分支 劇情 Ink Yarn 選項
+3D 與場景|diegetic-world-text|在 3D 世界放入文字與標示|以動態貼圖製作場景看板、角色名稱、標籤與對話氣泡。|3D 文字 看板 標籤 氣泡 名牌 Babylon
+遊戲開發|fps-shooter|製作第一人稱射擊遊戲|建立移動、瞄準、射擊、武器、生命值與敵人 AI。|FPS 射擊 槍 武器 後座力 第一人稱
+遊戲開發|game-ai|設計敵人 AI 與尋路|用狀態機、行為樹、轉向與 A* 讓 NPC 巡邏、追逐與移動。|AI 敵人 NPC 尋路 狀態機 A星 巡邏 追逐
+遊戲開發|game-feel|改善遊戲操作與打擊感|加入鏡頭震動、命中停頓、彈性變形與聲光回饋。|打擊感 手感 回饋 震動 命中 彈性 遊戲
+遊戲開發|game-jam|規劃限時遊戲開發|在 Game Jam 時限內縮小範圍、安排進度並完成提交。|Game Jam 限時 48小時 遊戲 進度
+遊戲開發|game-ui-ux|製作遊戲選單與 HUD|建立生命條、主選單、暫停畫面及鍵盤或手把操作流程。|遊戲 UI HUD 選單 生命條 暫停 手把
+3D 與場景|generate-low-poly-model|產生低多邊形 3D 模型|使用 Three.js 程式生成低面數模型，並匯出 glTF 或 GLB。|低多邊形 low poly 3D 建模 模型 GLB glTF 道具
+遊戲開發|hud|製作精簡遊戲狀態列|建立可重用的 HUD 狀態列與展開資訊面板。|HUD 狀態列 遊戲 介面 體力 天氣
+遊戲開發|initialize-game-repo|建立網頁與桌面遊戲專案|初始化包含 React、Vite、Babylon.js 與 Electron 的遊戲專案。|初始化 遊戲 專案 React Vite Babylon Electron 桌面
+遊戲開發|input-systems|設計鍵盤手把與觸控輸入|將按鍵抽象成動作，處理改鍵、類比死區與輸入緩衝。|輸入 按鍵 改鍵 鍵盤 手把 觸控 搖桿
+遊戲開發|inventory|製作背包與快捷道具列|建立快捷欄、選中道具、展開背包與道具指派功能。|背包 道具 欄位 快捷列 物品 inventory
+遊戲開發|itch-publish|將遊戲發布到 itch.io|準備專案頁面，並用 butler 上傳與更新各平台版本。|itch.io 發布 上架 butler 遊戲
+遊戲開發|level-design|設計可遊玩的關卡|從灰盒配置出發，安排路線、節奏、遭遇與玩家動線。|關卡 地圖 設計 動線 灰盒 地形
+3D 與場景|lighting|製作戶外光照與日夜變化|集中管理戶外光源、霧、陰影與隨時間變化的場景照明。|光照 燈光 日夜 太陽 陰影 霧 Babylon
+遊戲開發|love2d-core|用 Lua 製作 LÖVE 2D 遊戲|建立 LÖVE 的遊戲迴圈、輸入、畫面繪製與場景狀態。|Lua Love2D LÖVE 2D 遊戲
+遊戲開發|performance-optimization|找出遊戲卡頓原因|先量測 CPU 與 GPU 瓶頸，再調整繪圖、配置與更新成本。|效能 優化 卡頓 FPS CPU GPU 遊戲 慢
+遊戲開發|phaser-arcade-physics|處理 Phaser 移動與碰撞|設定 Arcade Physics 的速度、重力、碰撞與重疊事件。|Phaser 碰撞 重力 移動 物理 2D
+遊戲開發|phaser-core|建立 Phaser 網頁遊戲|設定遊戲與場景生命週期、資源載入、鏡頭及跨場景溝通。|Phaser 2D 網頁 遊戲 場景
+遊戲開發|physics-tuning|調整遊戲物理與碰撞|調整時間步長、重力、阻力及碰撞偵測，改善抖動與穿牆。|物理 碰撞 穿牆 抖動 重力 阻力
+遊戲開發|pixijs-rendering|用 PixiJS 繪製互動 2D 畫面|建立 PixiJS 應用、精靈圖、場景樹、更新迴圈及指標事件。|PixiJS Pixi 2D 渲染 sprite 精靈圖
+遊戲開發|platformer|製作橫向跳躍遊戲|建立跑跳控制、跳躍緩衝、平台關卡與障礙物。|平台 跳躍 橫向 馬力歐 platformer 遊戲
+遊戲開發|player-controllers|切換第一與第三人稱角色控制|建立共用角色控制介面，處理視角方向、移動與跳躍。|角色 控制器 第一人稱 第三人稱 移動 Babylon
+3D 與場景|procedural-scene-props|快速產生場景小道具|用簡單幾何生成樹木、石頭、車輛與低面數場景擺設。|場景 道具 低多邊形 樹木 石頭 車輛 Babylon
+遊戲開發|procedural-gen|產生隨機地形與地城|使用可重現的隨機種子與雜訊，生成地形、地城及掉落表。|隨機 地形 地城 程序生成 種子 Perlin
+遊戲開發|prototype-fast|快速驗證遊戲玩法|以灰盒與明確時限做出可玩原型，驗證核心機制是否有趣。|原型 遊戲 MVP 灰盒 快速 試玩
+遊戲開發|puzzle|製作益智與推箱子遊戲|處理棋盤狀態、三消連鎖、推箱子規則、得分及復原。|益智 推箱子 三消 棋盤 解謎 puzzle
+遊戲開發|pygame-core|用 Python 製作 2D 遊戲|建立 pygame 的輸入、更新、繪製、精靈群組與碰撞迴圈。|Python pygame 2D 遊戲
+遊戲開發|roguelike|製作隨機地城冒險|建立回合格子移動、隨機地城、視野、掉落與永久死亡規則。|Roguelike 地城 隨機 回合 冒險
+遊戲開發|router|尋找合適的遊戲開發工具|判斷遊戲引擎與工作內容，再轉交對應的專門 Skill。|遊戲 工具 選擇 引擎 開發 分派
+遊戲開發|rpg|製作角色扮演遊戲系統|建立能力值、升級、裝備、任務、對話、戰鬥與存檔。|RPG 角色扮演 任務 裝備 升級 戰鬥
+遊戲開發|save-systems|設計存檔與讀檔|規劃儲存內容、存檔欄位、自動存檔與格式版本遷移。|存檔 讀檔 儲存 自動存檔 遊戲
+3D 與場景|shader-programming|撰寫 Shader 視覺效果|以 GLSL 為主介紹頂點與片段著色器，並提供 HLSL 對照。|Shader 著色器 GLSL HLSL 材質 特效
+3D 與場景|sky-box|製作動態天空與星空|建立天空穹頂、星星、日出日落與太陽月亮的位置變化。|天空 星空 日出 日落 月亮 太陽 Babylon
+遊戲開發|steam-publish|準備遊戲在 Steam 發布|處理 Steamworks、商店素材、上傳版本與發布前檢查。|Steam 上架 發布 Steamworks 商店 遊戲
+遊戲開發|survival-crafting|製作生存與合成遊戲|建立資源採集、物品合成、建造與飢餓等生存系統。|生存 合成 採集 建造 飢餓 遊戲
+遊戲開發|tower-defense|製作塔防遊戲|建立敵人路線、波次、砲塔瞄準、資源與生命值系統。|塔防 砲塔 波次 敵人 防守 遊戲
+遊戲開發|visual-novel|製作視覺小說遊戲|建立文字框、角色與背景、分支選項、存讀檔及歷史紀錄。|視覺小說 VN 戀愛 劇情 文字遊戲 分支
+3D 與場景|world-environment|組裝完整戶外 3D 世界|整合地形、天氣、光照、場景道具與出生點等環境系統。|戶外 3D 世界 場景 地形 天氣 Babylon
+Godot|godot-2d-movement|Godot 2D 角色跑跳與移動|用 CharacterBody2D 建立跑跳、俯視移動與地面碰撞。|Godot 2D 角色 移動 跳躍
+Godot|godot-3d-essentials|Godot 3D 場景入門|設定 3D 節點、鏡頭、光源、環境、材質與 GridMap。|Godot 3D 場景 相機 光源
+Godot|godot-animation|Godot 動畫與狀態混合|使用 AnimationPlayer、AnimationTree 與 Tween 播放及混合動畫。|Godot 動畫 Tween 關鍵影格
+Godot|godot-audio|Godot 音效播放與混音|設定音效播放器、音訊匯流排、音量與節拍同步。|Godot 音效 音樂 音量 混音
+Godot|godot-csharp|在 Godot 使用 C#|撰寫 C# 節點腳本，處理 Export、Signal 與 GDScript 互通。|Godot C# CSharp .NET 腳本
+Godot|godot-export|匯出 Godot 遊戲|設定匯出範本、平台預設與自動化建置流程。|Godot 匯出 發布 建置 Windows Web Android
+Godot|godot-gdscript|撰寫與除錯 GDScript|處理 Godot 腳本、型別、節點生命週期、訊號及非同步。|Godot GDScript 腳本 程式 除錯 bug
+Godot|godot-gdscript-headless-testing|自動測試 Godot 腳本|以 headless 模式執行測試，讓失敗結果能正確阻擋 CI 建置。|Godot 測試 CI headless GDScript
+Godot|godot-multiplayer|Godot 多人連線與同步|設定 ENet 客戶端與伺服器、RPC 權限及節點狀態同步。|Godot 多人 連線 RPC 網路 同步
+Godot|godot-nodes-scenes|整理 Godot 節點與場景|規劃可重用場景、動態實例與 autoload，排查節點查找錯誤。|Godot 節點 場景 架構 node not found
+Godot|godot-physics|Godot 碰撞與物理偵測|設定剛體、碰撞層、Area 偵測及射線查詢。|Godot 物理 碰撞 剛體 射線
+Godot|godot-resources|Godot 道具資料與資源檔|以自訂 Resource 管理設定、道具能力與按需載入。|Godot 資料 Resource 道具 設定
+Godot|godot-shaders|撰寫 Godot 材質特效|使用 Godot Shading Language 製作 2D 與 3D 著色器。|Godot Shader 著色器 特效 材質
+Godot|godot-signals-groups|Godot 節點事件與群組|用 signals 與 groups 降低節點耦合，傳遞或廣播事件。|Godot 訊號 signal groups 事件
+Godot|godot-tilemap|製作 Godot 磚塊地圖|設定 TileMapLayer、TileSet、自動拼接及程式化地圖修改。|Godot 地圖 tilemap 磚塊 格子
+Godot|godot-ui-control|製作 Godot 遊戲介面|使用 Control、Container、Theme 與焦點導覽排列選單及 HUD。|Godot UI 介面 選單 HUD 排版
+動畫與互動|gsap-core|製作 GSAP 基本網頁動畫|設定緩動、交錯、時長與響應式動畫，操作 DOM 或 SVG。|動畫 GSAP 動態 補間 緩動 網頁
+動畫與互動|gsap-frameworks|在 Vue 或 Svelte 使用 GSAP|整合動畫與框架生命週期，處理選取範圍與卸載清理。|GSAP Vue Nuxt Svelte 動畫
+動畫與互動|gsap-performance|改善 GSAP 動畫流暢度|減少排版重算與繪製成本，調整 transform、批次與效能。|GSAP 動畫 效能 卡頓 流暢 FPS
+動畫與互動|gsap-plugins|使用 GSAP 進階動畫插件|處理拖曳、文字拆分、Flip、SVG 路徑與其他插件。|GSAP 插件 拖曳 文字動畫 SVG Flip Draggable
+動畫與互動|gsap-react|在 React 使用 GSAP|使用 useGSAP、refs 與 context 管理 React 或 Next.js 動畫。|GSAP React Next.js 動畫 hook
+動畫與互動|gsap-scrolltrigger|製作跟隨捲動的網頁動畫|設定 ScrollTrigger、釘選區塊、視差與捲動進度連動。|GSAP 捲動 滾動 ScrollTrigger 視差 pin 網頁動畫
+動畫與互動|gsap-timeline|編排多段動畫播放順序|以 GSAP timeline 串聯、重疊或巢狀編排動畫。|GSAP 時間軸 順序 動畫 timeline
+動畫與互動|gsap-utils|使用 GSAP 數值與陣列工具|處理範圍映射、插值、隨機、吸附與循環數值。|GSAP 工具 數值 random clamp 插值
+Roblox|roblox-characters|Roblox 角色與重生系統|處理 Humanoid、角色動畫、裝備與重生後的狀態更新。|Roblox 角色 重生 動畫 裝備
+Roblox|roblox-datastores|儲存 Roblox 玩家資料|使用 DataStore 存讀玩家資料，處理重試與排行榜。|Roblox 儲存 存檔 DataStore 排行榜
+Roblox|roblox-luau|撰寫 Roblox Luau 腳本|使用服務、Instances 與事件建立客戶端和伺服器邏輯。|Roblox Luau Lua 腳本 程式
+Roblox|roblox-networking|Roblox 多人網路與驗證|處理 RemoteEvent、伺服器權限、參數驗證與狀態同步。|Roblox 多人 連線 網路 同步 驗證
+Roblox|roblox-physics|Roblox 碰撞與物理運動|設定剛體、約束、碰撞群組、射線與作用力。|Roblox 碰撞 物理 車輛 射線 重力
+Roblox|roblox-studio-workflow|在 Roblox Studio 修改專案|先檢查既有結構，再增量修改與測試伺服器、客戶端及裝置。|Roblox Studio 專案 修改 除錯 測試
+Roblox|roblox-ui|製作 Roblox 跨裝置介面|建立背包、商店、設定及 HUD，處理觸控與手把導覽。|Roblox UI 介面 背包 商店 HUD
+Unity|unity-animation|Unity 角色動畫與混合|設定 Animator 狀態、轉場、參數、Blend Tree 與 IK。|Unity 動畫 Animator 混合 IK
+Unity|unity-build-pipeline|建置與發布 Unity 遊戲|設定建置平台、場景、IL2CPP 與 CI 自動化流程。|Unity 建置 發布 匯出 IL2CPP CI
+Unity|unity-csharp-scripting|撰寫 Unity C# 遊戲腳本|處理 MonoBehaviour、元件存取、協程及 Inspector 序列化。|Unity C# CSharp 腳本 程式
+Unity|unity-input-system|Unity 按鍵手把與改鍵|設定 Input Actions、PlayerInput 與不同裝置的控制對應。|Unity 輸入 按鍵 手把 改鍵 Input
+Unity|unity-navmesh|Unity 敵人導航與尋路|烘焙 NavMesh，讓角色尋路並避開動態障礙。|Unity 尋路 NavMesh 導航 敵人 追逐
+Unity|unity-physics|Unity 剛體與碰撞|設定 Rigidbody、Collider、Trigger、射線與碰撞層。|Unity 物理 碰撞 剛體 重力 射線
+Unity|unity-scriptableobjects|Unity 資料與事件架構|以 ScriptableObject 建立設定資料、共用變數與事件通道。|Unity 資料 架構 ScriptableObject 設定
+Unity|unity-tilemap-2d|Unity 2D 磚塊地圖|使用 Grid、Tilemap、Rule Tile 與碰撞元件製作地圖。|Unity 2D 地圖 Tilemap 磚塊
+Unreal|unreal-behavior-trees|Unreal NPC 行為樹|設定 Behavior Tree、Blackboard 與 AIController 控制 NPC。|Unreal UE5 NPC AI 行為樹 黑板
+Unreal|unreal-blueprints|Unreal 藍圖視覺程式|以 Blueprint 事件圖、變數、介面與派送器建立遊戲邏輯。|Unreal UE5 Blueprint 藍圖 視覺程式
+Unreal|unreal-cpp-gameplay|撰寫 Unreal C++ 遊戲邏輯|使用反射巨集與 Gameplay Framework 建立角色、Actor 與元件。|Unreal UE5 C++ Actor Character 程式
+Unreal|unreal-enhanced-input|Unreal 玩家輸入設定|建立 Input Actions 與 Mapping Context，綁定移動和操作。|Unreal UE5 輸入 按鍵 手把 Enhanced
+Unreal|unreal-niagara|Unreal Niagara 粒子特效|設計粒子發射器、更新模組與可由程式控制的特效參數。|Unreal UE5 Niagara 粒子 特效 VFX
+Unreal|unreal-packaging|打包與發布 Unreal 遊戲|設定 cooking、Shipping 建置與平台封裝流程。|Unreal UE5 打包 發布 建置 cooking
+3D 與場景|threejs-3d-generator|用 AI 產生 3D 模型|透過 Tripo API 將文字或圖片轉為 3D 模型，並處理骨架與動畫。|3D 生成 模型 建模 圖轉3D 文字轉3D Tripo API
+3D 與場景|threejs-aaa-graphics-builder|提升 Three.js 遊戲畫質|整合美術方向、模型、材質、光照與效能，提升場景視覺品質。|Three.js 畫質 美化 高品質 材質 光照
+動畫與互動|threejs-animation|播放與混合 3D 動畫|處理 Three.js 關鍵影格、骨架動畫、morph 與動畫混合。|Three.js 3D 動畫 骨架 GLTF 混合
+3D 與場景|threejs-atmosphere-aerial-perspective|製作大氣與遠景霧化|以大氣散射、透射與空氣透視呈現天空與遠景。|Three.js 大氣 天空 散射 遠景 霧
+遊戲開發|threejs-audio-generator|用 AI 產生遊戲音效與音樂|透過 ElevenLabs 生成並整合背景音、音效與音樂片段。|音效 音樂 生成 聲音 ElevenLabs API Three.js
+3D 與場景|threejs-awesome-graphics-skills|挑選進階 3D 視覺 Skills|依場景需求選擇幾何、材質、天氣、動畫與畫面驗證工具。|Three.js 視覺 3D 特效 選擇 工具
+3D 與場景|threejs-bloom|製作發光與 Bloom 效果|規劃 HDR、選擇性 Bloom 與發光亮度階層。|Three.js Bloom 發光 輝光 HDR 特效
+3D 與場景|threejs-camera-direction|設計電影感與追蹤鏡頭|處理追蹤、環繞、構圖、視角轉場與大型場景的鏡頭控制。|Three.js 鏡頭 相機 追蹤 電影 構圖
+工具與程式|threejs-debug-profiler|排查 Three.js 畫面與效能問題|診斷黑畫面、資源載入、互動與渲染錯誤，量測效能瓶頸。|Three.js 除錯 bug 黑畫面 效能 錯誤 debug
+3D 與場景|threejs-exposure-color-grading|調整 3D 畫面曝光與色調|建立亮度量測、自動曝光、tone mapping 與 LUT 調色流程。|Three.js 曝光 調色 亮度 色調 LUT
+動畫與互動|threejs-fbx-mixamo|整合 Mixamo 角色動畫|載入 FBX 角色與獨立動畫片段，處理混合及一次性動作。|Three.js Mixamo FBX 角色 動畫
+遊戲開發|threejs-game-director|統整 Three.js 遊戲開發|從玩法、介面、美術與素材一路協調到除錯與發布。|Three.js 遊戲 開發 整合 完成
+遊戲開發|threejs-game-ui-designer|設計 Three.js 遊戲介面|製作 HUD、主選單、勝敗畫面與觸控介面，讓 UI 配合世界風格。|Three.js 遊戲 UI HUD 選單 介面
+遊戲開發|threejs-gameplay-systems|建立 Three.js 可玩機制|設計核心迴圈、實體、輸入、碰撞、得分與關卡互動。|Three.js 遊戲 玩法 碰撞 分數 互動
+3D 與場景|threejs-gltf-loading|載入 GLB 與 glTF 模型|使用 GLTFLoader 載入模型，處理壓縮貼圖與骨架動畫。|Three.js GLB GLTF 載入 模型 DRACO
+圖片與設計|threejs-image-generator|生成遊戲圖片與貼圖|透過 Gemini image API 製作概念圖、貼圖、圖示及背景素材。|圖片 貼圖 圖示 背景 Gemini API Three.js 生圖
+3D 與場景|threejs-image-pipeline|整合 3D 畫面後製流程|管理深度、法線、AO、Bloom、曝光與調色的渲染順序。|Three.js 後製 渲染 畫面 AO Bloom
+動畫與互動|threejs-interaction|讓 3D 物件可以點選與互動|以 Raycaster 與控制器處理滑鼠、觸控及物件選取。|Three.js 3D 點擊 點選 互動 滑鼠 觸控 Raycaster
+3D 與場景|threejs-loaders|管理 3D 模型與貼圖載入|載入模型、圖片與 HDR 環境，管理非同步與進度。|Three.js 載入 模型 貼圖 HDR 進度
+3D 與場景|threejs-materials-lighting|設定 3D 材質燈光與陰影|選擇 PBR 材質、光源、環境反射與 shadow maps。|Three.js 材質 光照 燈光 陰影 PBR
+3D 與場景|threejs-parallax-occlusion-mapping|讓平面材質呈現凹凸深度|使用 POM、高度場與輪廓裁切，建立帶自陰影的浮雕表面。|Three.js 凹凸 浮雕 POM 視差 高度場
+3D 與場景|threejs-precipitation-surfaces|製作下雨積雪與濕地面|讓降雨、積雪、水窪與表面濕潤程度共同變化。|Three.js 雨 下雨 雪 積雪 水窪 天氣
+動畫與互動|threejs-procedural-animation|以程式控制複雜 3D 動作|用解析時間軸、彈簧跟隨與座標轉換製作程序動畫。|Three.js 程序動畫 火箭 發射 彈簧 動作
+3D 與場景|threejs-procedural-architecture|以程式生成建築|產生量體、立面、屋頂、拱門與可重現的建築變體。|Three.js 建築 城市 房子 立面 程序生成
+3D 與場景|threejs-procedural-fields|生成連貫的地形與材質雜訊|建立共用的標量與向量場，控制地形、生態與材質變化。|Three.js 雜訊 地形 向量場 程序生成
+3D 與場景|threejs-procedural-geometry|用程式建立精細幾何模型|處理擠出、旋轉、掃掠、切孔與組裝模型的幾何品質。|Three.js 幾何 建模 3D 擠出 倒角 機器人
+3D 與場景|threejs-procedural-materials|製作玻璃布料等程序材質|建立土壤、苔蘚、布料、玻璃、寶石與其他程序材質效果。|Three.js 材質 玻璃 布料 苔蘚 PBR 折射
+3D 與場景|threejs-procedural-planets|製作可近看的程序星球|生成球形地形、大陸、隕石坑、生態分布與細節層級。|Three.js 星球 行星 太空 大陸 隕石坑
+3D 與場景|threejs-procedural-vegetation|生成樹木草地與藤蔓|以程序建立植被，處理物種變體、生長、風與遠近細節。|Three.js 樹木 草地 花 植物 森林 藤蔓
+3D 與場景|threejs-procedural-vfx|製作火焰煙霧與全息特效|建立耀光、極光、火煙、火花、碎片與全息投影等即時效果。|Three.js 特效 VFX 火焰 煙霧 粒子 全息 極光
+工具與程式|threejs-qa-release|測試與發布 Three.js 遊戲|檢查玩法、行動裝置、建置與部署路徑，保存視覺回歸證據。|Three.js 測試 發布 手機 建置 QA 部署
+3D 與場景|threejs-raymarched-space-effects|製作黑洞蟲洞與宇宙特效|使用 raymarching 製作重力透鏡、吸積盤、星空與空間扭曲。|Three.js 黑洞 蟲洞 太空 宇宙 重力透鏡
+3D 與場景|threejs-scene-setup|建立 Three.js 基礎場景|設定 Scene、Camera、Renderer、渲染迴圈與視窗大小調整。|Three.js 3D 場景 入門 初始化 OrbitControls
+3D 與場景|threejs-screen-space-ambient-occlusion|增加物件接觸處的陰影深度|建立 GTAO 與環境遮蔽，改善物體貼地感並排查暈邊。|Three.js AO GTAO 環境遮蔽 接觸陰影
+3D 與場景|threejs-shadow-systems|製作穩定的大場景陰影|處理方向光陰影、cascade、快取與鏡頭移動時的穩定性。|Three.js 陰影 大場景 cascade 穩定
+3D 與場景|threejs-skill-router|選擇合適的進階 Three.js Skills|將複雜視覺需求分配給幾何、材質、大氣與畫面處理專門工具。|Three.js 選擇 工具 進階 視覺
+3D 與場景|threejs-spectral-ocean|製作海洋浪花與海岸|建立 FFT 海浪、淺水、碎浪、泡沫與水下光學效果。|Three.js 海洋 海浪 海岸 沙灘 泡沫 水
+3D 與場景|threejs-temporal-surfaces|製作結霜與玻璃雨滴|用歷史累積與折射製作觸控融霜、結晶及濕玻璃效果。|Three.js 結霜 融化 雨滴 玻璃 折射
+工具與程式|threejs-visual-validation|驗證 3D 圖形的穩定性|檢查固定視角、隨機種子、畫面尺度與 GPU 預算等視覺條件。|Three.js 視覺 驗證 測試 GPU 回歸
+3D 與場景|threejs-volumetric-clouds|製作立體雲層|用體積 raymarching 建立雲的密度、光照、雲影與品質層級。|Three.js 雲 體積雲 天空 天氣 raymarching
+3D 與場景|threejs-water-optics|模擬水面波紋與折射|製作淺水、泳池、物體擾動、焦散、吸收與水面反射。|Three.js 水 水面 波紋 折射 焦散 泳池 光學
+網頁與介面|a11y-audit|檢查介面無障礙|依 WCAG 與 ARIA 檢查對比、鍵盤操作及螢幕閱讀器支援。|無障礙 WCAG ARIA 對比 鍵盤 螢幕閱讀器
+網頁與介面|apply-aesthetic|套用指定介面風格|把品牌或視覺方向轉為設計 tokens，調整既有介面的整體外觀。|風格 品牌 Apple Linear Notion 美化 介面
+網頁與介面|brandkit|從零建立品牌設計基礎|產出可切換明暗模式的顏色、字體、間距與元件 tokens。|品牌 設計系統 明暗 主題 色彩 字體
+網頁與介面|critique|檢視設計中值得修改的地方|以實際渲染畫面為依據，提出嚴格的介面設計批評。|設計 評論 審查 critique UI 檢查
+網頁與介面|data-dashboard|製作資料儀表板|設計資料密集的分析畫面、監控頁面及多種圖表。|儀表板 dashboard 圖表 分析 監控 數據 資料
+網頁與介面|design-code|把介面規格轉成程式|依選定框架產出具狀態、tokens 與無障礙處理的 UI 程式。|介面 UI 程式 React Vue Flutter SwiftUI 元件
+網頁與介面|design-component|設計按鈕輸入框等元件|定義元件結構、尺寸、變體、互動狀態與無障礙規格。|元件 按鈕 輸入框 頁籤 modal 規格
+網頁與介面|design-doctrine|統一介面設計與驗證規則|為畫面、元件與 tokens 定義共用樣式、狀態及驗證原則。|設計 規範 UI 元件 tokens 驗證
+網頁與介面|design-qa|檢查設計品質與視覺回歸|設定 tokens 檢查、無障礙、自動化對比與視覺回歸流程。|設計 測試 品質 QA 無障礙 回歸
+網頁與介面|design-review|評估既有介面的易用性|依啟發式原則檢查 UI，整理問題優先順序與改善建議。|UI UX 介面 評估 易用性 審查
+網頁與介面|design-screen|從需求製作完整介面|從需求與視覺方向開始，完成頁面、tokens、實作與檢查。|網頁 網站 介面 頁面 UI landing 設計
+網頁與介面|design-tokens|整理顏色字體間距規則|建立或檢查分層設計 tokens，維持跨元件與品牌的一致性。|tokens 設計系統 顏色 字體 間距 主題
+網頁與介面|figma-integration|同步 Figma 與程式設計規則|對應 Figma Variables、tokens 與元件，檢查設計與程式差異。|Figma 同步 Variables tokens 設計 程式
+網頁與介面|gate|執行設計套件品質檢查|執行該套件的一鍵品質檢查，回報實際通過或失敗結果。|品質 檢查 gate 測試 設計
+網頁與介面|governance|管理設計系統版本與貢獻|規劃元件新增、棄用、版本編號與設計規則的更新流程。|設計系統 版本 SemVer 維護 元件
+網頁與介面|grill-me|先釐清會影響設計的需求|找出動工前必須回答的問題，並明列尚未確認的假設。|需求 訪談 釐清 假設 設計
+網頁與介面|image-to-code|依截圖重建網頁介面|由參考圖推估配色、字體、間距與版面，再製作對應 UI 程式。|截圖 圖片 轉程式 參考圖 還原 網頁 UI
+網頁與介面|migrate-design-system|導入或遷移設計系統|在 Material、Apple HIG、shadcn 等外部系統與現有規則間對應。|設計系統 遷移 Material shadcn Bootstrap
+網頁與介面|performance|改善網頁載入與操作速度|針對 Core Web Vitals 調整載入、版面偏移與動畫效能。|網頁 效能 速度 卡頓 LCP INP CLS
+網頁與介面|prototype|規劃使用者流程與介面原型|由內容、wireframe 到高擬真原型，搭配旅程與易用性驗證。|原型 wireframe 使用者流程 User Flow UX 線框 測試
+網頁與介面|redesign|改良既有網頁與 App|檢查原有設計，再以局部調整提升介面品質。|改版 美化 網頁 App 介面 優化 redesign
+網頁與介面|scaffold-project|建立設計產品專案骨架|依該設計套件建議的目錄結構建立新產品專案。|專案 初始化 架構 scaffold 設計
+網頁與介面|ship|完成設計產品發布前檢查|執行品質、響應式與渲染檢查，再整理版本發布資料。|發布 上線 檢查 響應式 release
+網頁與介面|token-build|將設計 tokens 轉成平台樣式|把 DTCG tokens 轉成 CSS、Tailwind、iOS 或 Android 等資源。|tokens CSS Tailwind iOS Android 建置
+網頁與介面|ux-writing|撰寫按鈕與錯誤提示文案|為介面按鈕、空白狀態、通知與錯誤訊息撰寫清楚文字。|文案 按鈕 提示 錯誤訊息 空白狀態 UI UX

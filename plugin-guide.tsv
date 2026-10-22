@@ -1,0 +1,388 @@
+# category|full name|title|summary|keywords
+工具與程式|hf-cli|管理 Hugging Face 模型與資料集|使用 hf 命令列下載、上傳與管理 Hub 模型、資料集及其他資源。|Hugging Face hf 模型 資料集 下載 上傳
+測試與資安|ecc:accessibility|檢查網站與 App 無障礙|依 WCAG AA 檢查語意、焦點、對比與跨平台輔助操作。|ECC 無障礙 WCAG ARIA 對比 焦點
+AI 與 Agents|ecc:agent-architecture-audit|檢查 Agent 系統架構問題|檢視 Agent 與 LLM 系統的記憶、工具使用、重試及渲染問題。|ECC Agent 架構 審查 LLM 記憶
+AI 與 Agents|ecc:agent-eval|比較不同 AI coding agents|以相同任務比較成功率、費用、時間與結果一致性。|ECC Agent 比較 評估 Codex Claude 成本
+AI 與 Agents|ecc:agent-harness-construction|設計 Agent 的工具與執行環境|規劃可用動作、工具定義與觀測格式，改善任務完成率。|ECC Agent harness 工具 定義 觀測
+AI 與 Agents|ecc:agent-introspection-debugging|診斷 AI Agent 執行失敗|保存失敗現場，依結構化流程找原因、復原並產出診斷報告。|ECC Agent 除錯 失敗 診斷 debug
+AI 與 Agents|ecc:agent-payment-x402|替 Agent 加入付款控制|整合 x402 付款、任務預算、支出限制與錢包操作。|ECC Agent x402 付款 預算 錢包
+測試與資安|ecc:agent-runtime-gateway-smoke-test|測試 Agent API 與閘道連線|以簡單任務驗證本地 API、暫時通道與遠端回呼，再恢復原連線。|ECC Agent API 閘道 tunnel 連線 測試
+測試與資安|ecc:agent-security-hardening|強化 AI Agent 安全性|檢查不可信內容、工具權限、工作區檔案與憑證處理。|ECC Agent 資安 安全 權限 憑證
+AI 與 Agents|ecc:agent-self-evaluation|讓 Agent 自評交付品質|依正確性、完整性、清晰度與可執行性等面向提供有證據的自評。|ECC Agent 自評 品質 檢查
+工具與程式|ecc:agent-sort|依專案挑選 ECC 安裝項目|根據專案證據整理每日常用與備用的 Skills、指令及 hooks。|ECC 安裝 挑選 清單 分類
+AI 與 Agents|ecc:agentic-engineering|規劃由 Agent 完成的工程工作|採評估優先、任務拆解與成本考量，安排端到端工程執行。|ECC Agent 工程 規劃 拆解 評估
+AI 與 Agents|ecc:agentic-os|建立持續運作的多 Agent 系統|設計專門 Agent、檔案記憶、排程與狀態管理架構。|ECC 多Agent 記憶 排程 狀態 系統
+程式與架構|ecc:ai-first-engineering|制定 AI 協作開發流程|為大量使用 AI 產出程式的團隊設定工作流程、審查與責任分工。|ECC AI 團隊 流程 審查 工程
+測試與資安|ecc:ai-regression-testing|防止 AI 修改造成程式回歸|規劃沙箱 API 測試與自動錯誤檢查，補足 AI 的驗證盲點。|ECC AI 回歸 測試 API 沙箱
+程式與架構|ecc:android-clean-architecture|規劃 Android 分層架構|為 Android 與 Kotlin Multiplatform 設計模組、UseCase 與 Repository。|ECC Android Kotlin 架構 分層 KMP
+網頁與介面|ecc:angular-developer|開發 Angular 頁面與元件|建立 Angular 專案、元件及服務，處理 signals、表單與依賴注入。|ECC Angular 前端 元件 signals 表單
+資料與 API|ecc:api-connector-builder|依既有風格新增 API 串接|先比對專案整合方式，再加入新的 connector 或供應商。|ECC API 串接 connector provider 整合
+資料與 API|ecc:api-design|設計清楚一致的 REST API|規劃資源名稱、狀態碼、分頁、錯誤回應、版本與流量限制。|ECC API REST 設計 分頁 錯誤 狀態碼
+程式與架構|ecc:architecture-decision-records|記錄架構決策與取捨|將決策背景、考慮方案與影響整理成可追蹤的 ADR 文件。|ECC 架構 決策 ADR 紀錄 文件
+研究與寫作|ecc:article-writing|撰寫長文教學與部落格|依提供的範例或品牌語氣撰寫文章、指南、教學與電子報。|ECC 文章 寫作 教學 部落格 電子報
+部署與維運|ecc:automation-audit-ops|盤點自動化是否真的運作|檢查排程、hooks、connectors 與 MCP 的運作、故障及重複情況。|ECC 自動化 排程 盤點 MCP hooks
+AI 與 Agents|ecc:autonomous-agent-harness|配置自主 Agent 執行系統|整合持續記憶、排程、電腦操作與任務佇列。|ECC 自主 Agent harness 記憶 佇列
+AI 與 Agents|ecc:autonomous-loops|查閱舊版自主 Agent 迴圈模式|保留的相容性指南，涵蓋循序流程與多 Agent 任務圖。|ECC 自主 迴圈 loop 舊版 相容
+程式與架構|ecc:backend-patterns|規劃 Node.js 後端架構|整理 Express、Next.js API、伺服器設計與資料庫效能模式。|ECC 後端 Node.js Express Next.js API
+測試與資安|ecc:benchmark|量測網站 API 與建置效能|建立網頁指標、API 延遲與建置時間的基準並比較回歸。|ECC 效能 benchmark 量測 API 延遲
+商務與營運|ecc:benchmark-methodology|用一致標準評分競品|依定位、視覺、方案、證據及價格等面向建立可比較的競品卡。|ECC 競品 比較 評分 品牌 benchmark
+程式與架構|ecc:benchmark-optimization-loop|用量測改善程式速度|先建立效能基準，再逐一測試假設，保留正確且較快的方案。|ECC 效能 優化 速度 量測 瓶頸
+資料與 API|ecc:bengali-nlp|處理孟加拉語文字|處理孟加拉文字的 Unicode、字形辨識、斷詞與 NLP 正規化。|ECC 孟加拉語 Bangla NLP Unicode 斷詞
+3D 與場景|ecc:blender-motion-state-inspection|檢查 Blender 骨架與動作狀態|核對角色姿勢、重定向、腳部接地與模型朝向等實際狀態。|ECC Blender 骨架 動畫 接地 retarget
+程式與架構|ecc:blueprint|把目標拆成可執行開發計畫|將大型工程目標拆成適合多次工作與多 Agent 協作的小步驟。|ECC 計畫 規劃 拆解 依賴 多Agent
+商務與營運|ecc:brand-discovery|訪談與釐清品牌定位|透過分階段訪談整理品牌目的、受眾、個性、語氣與故事。|ECC 品牌 定位 訪談 受眾 語氣
+研究與寫作|ecc:brand-voice|從原文建立品牌語氣|分析實際文章與貼文，整理可重用的寫作風格與品牌口吻。|ECC 品牌 語氣 風格 寫作 文案
+程式與架構|ecc:brownfield-retrospective|回顧既有專案的工程缺口|重建已做決策，檢查既有專案的思考、實作、功能與驗證缺口。|ECC 既有專案 回顧 缺口 審查
+測試與資安|ecc:browser-qa|用瀏覽器驗證上線介面|操作表單與登入流程，檢查 console、網頁效能與部署後行為。|ECC 瀏覽器 QA 測試 表單 登入 上線
+程式與架構|ecc:bun-runtime|使用 Bun 執行與建置專案|評估 Bun 與 Node 的取捨，處理套件管理、打包及測試。|ECC Bun Node 執行 打包 套件
+部署與維運|ecc:canary-watch|檢查部署後網站狀態|核對 HTTP、SSE、靜態資源、瀏覽器錯誤與效能回歸。|ECC 部署 監控 上線 SSE HTTP
+商務與營運|ecc:carrier-relationship-management|管理貨運承運商與報價|整理承運商篩選、費率協商、運量分配與服務評分。|ECC 貨運 承運商 報價 物流
+程式與架構|ecc:change-impact|分析修改可能影響哪些地方|修改前追查呼叫、資料與依賴，修改後比對實際差異。|ECC 影響分析 修改 依賴 資料流
+部署與維運|ecc:cisco-ios-patterns|檢查 Cisco 網路設備設定|檢視 IOS 指令、ACL、介面與設定階層，安排變更驗證。|ECC Cisco IOS 網路 ACL 設定
+AI 與 Agents|ecc:ck|保存與恢復專案上下文|用 Context Keeper 指令管理每個專案的持續記憶與工作交接。|ECC 記憶 上下文 Context Keeper 恢復
+AI 與 Agents|ecc:claude-devfleet|用 DevFleet 協調多 Agent 開發|將任務分派到隔離 worktree，監控進度並讀取結構化回報。|ECC DevFleet 多Agent worktree 分派
+測試與資安|ecc:click-path-audit|追查按鈕操作後的完整狀態|沿著點擊流程檢查互相抵銷、錯誤結果與介面不同步問題。|ECC 按鈕 互動 狀態 流程 除錯
+資料與 API|ecc:clickhouse-io|改善 ClickHouse 查詢與分析|設計分析型資料表、優化查詢並規劃資料工程流程。|ECC ClickHouse SQL 分析 查詢 資料庫
+程式與架構|ecc:code-tour|製作可跟著看的程式導覽|以 CodeTour 檔案連結實際程式與行號，解說架構或問題原因。|ECC 程式 導覽 CodeTour 架構 新人
+程式與架構|ecc:codebase-onboarding|快速理解陌生程式專案|整理架構、入口、慣例與入門指南，協助接手專案。|ECC 專案 接手 架構 入門 程式
+測試與資安|ecc:codehealth-mcp|量測程式結構品質|透過 CodeScene MCP 比較修改前後的 Code Health 與重構影響。|ECC CodeScene 程式品質 重構 MCP
+程式與架構|ecc:coding-standards|檢查程式命名與可讀性|套用跨專案的命名、不可變資料與可維護性準則。|ECC 程式 規範 命名 可讀性
+商務與營運|ecc:competitive-platform-analysis|建立競爭對手分析範圍|辨識與分類競品，先決定哪些平台值得納入比較。|ECC 競品 平台 市場 分類 分析
+商務與營運|ecc:competitive-report-structure|整理可供決策的競品報告|將競品評分、比較矩陣、定位空缺與策略建議整合成報告。|ECC 競品 報告 比較 矩陣 策略
+網頁與介面|ecc:compose-multiplatform-patterns|製作 Compose 跨平台介面|處理 KMP 與 Jetpack Compose 的狀態、導航、主題及效能。|ECC Compose KMP Kotlin 跨平台 UI
+工具與程式|ecc:config-gc|找出 Agent 設定中的冗餘項目|盤點 Skills、記憶、hooks、權限與快取的過期或孤立內容。|ECC 設定 清理 冗餘 hooks cache
+工具與程式|ecc:configure-ecc|依環境設定 ECC|盤點現有安裝，選擇適合範圍與執行環境的 ECC 設定。|ECC 設定 安裝 初始化 hooks
+商務與營運|ecc:connections-optimizer|整理 X 與 LinkedIn 人脈|先審閱人脈名單，再整理追蹤建議與符合本人語氣的聯繫草稿。|ECC X LinkedIn 人脈 追蹤 聯繫
+研究與寫作|ecc:content-engine|規劃多平台內容與發文|製作適合不同平台的貼文、影片腳本、電子報與內容日曆。|ECC 社群 貼文 內容 日曆 腳本
+資料與 API|ecc:content-hash-cache-pattern|避免重複處理相同檔案|用 SHA-256 內容雜湊快取昂貴處理結果，內容變更時自動失效。|ECC 快取 hash SHA256 檔案 效能
+程式與架構|ecc:context-and-decisions|整理領域背景與決策文件|必要時建立範圍明確的 CONTEXT.md，並將重要決策交給 ADR。|ECC 背景 領域 決策 CONTEXT ADR
+AI 與 Agents|ecc:context-budget|查看 Agent 上下文預算|引導使用執行環境的原生用量顯示，或做有範圍的靜態盤點。|ECC 上下文 context token 預算
+AI 與 Agents|ecc:continuous-agent-loop|設計持續自檢的 Agent 迴圈|為自主執行流程加入品質門檻、評估與失敗恢復控制。|ECC Agent 迴圈 持續 評估 恢復
+AI 與 Agents|ecc:continuous-learning|查閱已棄用的學習機制|舊版自動抽取 Skill 機制；原文建議改用 continuous-learning-v2。|ECC 學習 舊版 棄用 v1
+AI 與 Agents|ecc:continuous-learning-v2|從工作紀錄整理可重用經驗|透過 hooks 觀察工作，累積帶可信度的規則並演化成 Skills。|ECC 學習 經驗 hooks 規則 Skill
+資料與 API|ecc:contract-first|先訂 API 契約再分工開發|用 OpenAPI、Schema 或 Protocol Buffers 同步前後端資料格式。|ECC API 契約 OpenAPI Schema 前後端
+工具與程式|ecc:conventional-commit-review|撰寫符合規範的 commit 訊息|檢查暫存變更，選擇適當的 Conventional Commits 類型與範圍。|ECC Git commit 訊息 Conventional
+AI 與 Agents|ecc:cost-aware-llm-pipeline|降低 LLM API 使用成本|依任務選模型，加入預算追蹤、重試與 prompt 快取。|ECC LLM 成本 API 模型 快取
+AI 與 Agents|ecc:cost-tracking|查看本地 Agent 用量與花費|從 ECC 費用紀錄整理 token、支出、預算與時間區間報告。|ECC 成本 費用 token 用量 預算
+程式與架構|ecc:council|用多種觀點討論難以取捨的決策|以四種角色立場檢視模糊需求、方案差異與是否繼續。|ECC 決策 取捨 多觀點 討論
+AI 與 Agents|ecc:council-multi-model|加入另一模型審視決策|在既有討論草案後，選擇性加入外部 Codex 評論。|ECC 多模型 決策 Codex 評論
+AI 與 Agents|ecc:counterparty-channel-discipline|設定 Agent 在群組的發言規則|規劃各頻道權限、提及觸發與觀察模式，控制對外溝通。|ECC Agent 群組 頻道 發言 權限
+程式與架構|ecc:cpp-coding-standards|撰寫較安全的現代 C++|依 C++ Core Guidelines 檢查程式慣例、安全性與重構方式。|ECC C++ cpp 程式 安全 規範
+測試與資安|ecc:cpp-testing|撰寫與修復 C++ 測試|使用 GoogleTest、CTest、coverage 與 sanitizers 檢查程式。|ECC C++ 測試 GoogleTest CTest
+研究與寫作|ecc:crosspost|將內容改編到不同社群平台|依 X、LinkedIn、Threads 與 Bluesky 的形式改寫分發內容。|ECC 社群 發文 跨平台 Threads X
+測試與資安|ecc:csharp-testing|撰寫 C# 與 .NET 測試|使用 xUnit、FluentAssertions、mock 與整合測試驗證行為。|ECC C# .NET xUnit 測試 mock
+商務與營運|ecc:customer-billing-ops|處理客戶訂閱與退款問題|用已連接的帳務工具檢查訂閱、退款、流失與付款入口問題。|ECC 客戶 訂閱 退款 帳單 Stripe
+商務與營運|ecc:customs-trade-compliance|整理報關與國際貿易資料|協助關稅分類、報關文件、貿易條件與自由貿易協定資格檢查。|ECC 報關 關稅 HS HTS 貿易 Incoterms
+程式與架構|ecc:dart-flutter-patterns|開發 Dart 與 Flutter 應用|處理 widget、不可變狀態、非同步、路由與應用架構。|ECC Dart Flutter widget Riverpod BLoC
+部署與維運|ecc:dashboard-builder|建立有用的監控儀表板|將維運問題對應到 Grafana、SigNoz 等平台的實際監測畫面。|ECC 監控 儀表板 Grafana SigNoz
+資料與 API|ecc:data-scraper-agent|建立定期資料蒐集 Agent|規劃公開來源爬取、排程、AI 補充欄位與資料保存流程。|ECC 爬蟲 蒐集 資料 排程 Agent
+資料與 API|ecc:data-throughput-accelerator|改善大量資料搬移速度|量測匯入、回填、ETL 與同步瓶頸，再比較加速方案。|ECC ETL 資料 匯入 匯出 效能 同步
+資料與 API|ecc:database-migrations|安全修改資料庫結構|規劃 schema 變更、分批回填與索引，降低上線遷移風險。|ECC 資料庫 遷移 schema 索引 migration
+研究與寫作|ecc:deep-research|產出有來源的研究報告|拆解研究問題，檢索多個網路來源，整理引用與信心程度。|ECC 深度研究 研究 報告 來源 引用
+工具與程式|ecc:deepseek-harness-setup|在 DeepSeek Harness 設定 ECC|配置原生 Skills 路徑、hooks bridge 與執行方式。|ECC DeepSeek DSH 安裝 設定 hooks
+測試與資安|ecc:defi-amm-security|檢查 AMM 與流動性池安全|檢查 Solidity 交易流程的重入、預言機、滑價與管理權限。|ECC DeFi Solidity AMM 安全 合約
+測試與資安|ecc:delivery-gate|完成前執行品質門檻|以 stop hook 檢查品質、學習紀錄與磁碟空間等交付條件。|ECC 品質 交付 gate hooks 檢查
+部署與維運|ecc:deployment-patterns|規劃部署與回滾流程|設計 CI/CD、容器化、健康檢查與正式環境發布程序。|ECC 部署 CI CD Docker 回滾
+網頁與介面|ecc:design-system|從程式整理設計系統|抽取現有配色、字體與間距 tokens，或檢查介面一致性。|ECC 設計系統 tokens 顏色 字體 UI
+程式與架構|ecc:dev-team|用開發團隊角色共同檢視問題|在同一工作中從 PM、架構、開發與 QA 角度討論功能。|ECC 團隊 PM 架構 QA 協作
+資料與 API|ecc:django-celery|建立 Django 背景工作與排程|設定 Celery 任務、beat 排程、重試、監控與測試。|ECC Django Celery 背景 排程 重試
+程式與架構|ecc:django-patterns|設計 Django 與 DRF 後端|處理 ORM、快取、signals、middleware 與 REST API 架構。|ECC Django DRF Python 後端 ORM
+測試與資安|ecc:django-security|檢查 Django 登入與網站安全|檢查權限、CSRF、SQL injection、XSS 與安全部署設定。|ECC Django 安全 登入 CSRF XSS
+測試與資安|ecc:django-tdd|以測試驅動 Django 開發|使用 pytest-django、factory 與 mock 驗證 Django 和 DRF API。|ECC Django 測試 TDD pytest DRF
+測試與資安|ecc:django-verification|執行 Django 專案完整驗證|檢查環境、型別、格式、遷移、測試、安全與設定。|ECC Django 驗證 測試 lint migration
+AI 與 Agents|ecc:dmux-workflows|用 dmux 管理多 Agent 工作|利用 tmux 分頁組織多個 coding agents 與平行工作流程。|ECC dmux tmux 多Agent 平行
+部署與維運|ecc:docker-patterns|配置 Docker 與多服務開發環境|處理 Dockerfile、Compose、容器安全、網路與資料卷。|ECC Docker Compose 容器 網路 volume
+研究與寫作|ecc:docs-governance|盤點專案文件角色與連結|以唯讀方式檢查文件責任、連結、ADR 索引與證據對應。|ECC 文件 治理 文件管理 ADR 連結
+工具與程式|ecc:documentation-lookup|查詢框架與套件最新文件|透過 Context7 MCP 取得函式庫設定、API 與範例文件。|ECC 文件 Context7 框架 API 教學
+程式與架構|ecc:dotnet-patterns|設計可維護的 C# 與 .NET 程式|處理依賴注入、async、語言慣例與應用程式架構。|ECC C# .NET 架構 async DI
+AI 與 Agents|ecc:dynamic-workflow-mode|設計可調整的 Agent 工作流程|建立任務專用 harness、評估門檻與可重用 Skill 抽取方式。|ECC Agent harness 工作流程 評估
+測試與資安|ecc:e2e-testing|建立 Playwright 端到端測試|設計 Page Object、CI 整合與測試產物，處理不穩定案例。|ECC Playwright E2E 測試 瀏覽器 CI
+工具與程式|ecc:ecc-guide|查詢 ECC 實際功能與設定|讀取本地 ECC 的 agents、skills、指令與文件回答使用問題。|ECC 教學 使用 設定 Skills 指令
+工具與程式|ecc:ecc-recipes|依工作需求挑選 ECC 指令組合|對應適合的指令群組、執行順序與停止條件，提供使用建議。|ECC 指令 組合 配方 流程 建議
+商務與營運|ecc:ecc-tools-cost-audit|檢查 ECC Tools 用量與費用|查找重複工作、PR 暴增、配額與模型花費異常的證據。|ECC Tools 用量 費用 配額 PR
+商務與營運|ecc:email-ops|整理信箱與撰寫郵件草稿|先查證郵件狀態，再進行分類、草稿與寄送結果確認。|ECC 郵件 信箱 email 草稿 分類
+商務與營運|ecc:energy-procurement|規劃企業能源採購|比較電力與天然氣費率、需求費、供應商報價及採購續約。|ECC 能源 採購 電力 天然氣 費率
+AI 與 Agents|ecc:enterprise-agent-ops|維運長期或雲端 Agent|規劃啟停、觀測、權限、安全開關、復原與容量管理。|ECC Agent 維運 雲端 觀測 啟停
+程式與架構|ecc:error-handling|設計清楚可恢復的錯誤處理|處理型別化錯誤、重試、斷路器與使用者錯誤提示。|ECC 錯誤處理 重試 例外 TypeScript Python Go
+工具與程式|ecc:esign-field-placement|精確放置電子簽名欄位|透過瀏覽器與座標面板，在固定簽名頁配置簽名、日期及文字。|ECC 電子簽名 簽署 欄位 座標 PDF
+測試與資安|ecc:eval-harness|先定義 AI 任務驗收方式|建立能力與回歸評估，用程式、規則或人工評分追蹤結果。|ECC eval 評估 驗收 Agent 回歸
+資料與 API|ecc:evm-token-decimals|防止代幣小數位換算錯誤|在 EVM 跨鏈情境查詢精度、設計快取並正確正規化金額。|ECC EVM 代幣 小數位 跨鏈 decimals
+研究與寫作|ecc:exa-search|用 Exa 搜尋網路與程式資訊|透過 Exa MCP 搜尋網頁、範例程式、公司與人物研究資料。|ECC Exa 搜尋 研究 公司 程式
+圖片與設計|ecc:fal-ai-media|用 fal.ai 生成圖片影片與聲音|透過 fal.ai MCP 操作文字生圖、影片生成、語音與音效模型。|ECC fal.ai 生圖 影片 生成 語音 音效
+資料與 API|ecc:fastapi-patterns|建立 FastAPI 後端服務|設計 Pydantic schema、相依注入、非同步、驗證與服務層。|ECC FastAPI Python API Pydantic 後端
+商務與營運|ecc:finance-billing-ops|核對營收定價與帳務問題|以實際資料整理營收、方案比較、退款與重複扣款原因。|ECC 營收 定價 帳務 退款 扣款
+部署與維運|ecc:flox-environments|建立可重現的開發環境|用 Flox 與 Nix 描述工具鏈和系統依賴，供跨平台重建。|ECC Flox Nix 開發環境 工具鏈
+測試與資安|ecc:flutter-dart-code-review|審查 Flutter 與 Dart 程式|檢查 widget、狀態管理、效能、語言慣例與無障礙。|ECC Flutter Dart code review 審查
+AI 與 Agents|ecc:foundation-models-on-device|在 Apple 裝置整合本機 LLM|使用 FoundationModels 進行文字生成、結構化輸出與工具呼叫。|ECC Apple FoundationModels 本機 LLM iOS
+網頁與介面|ecc:frontend-a11y|改善 React 前端無障礙|處理語意 HTML、表單標籤、ARIA、鍵盤與焦點管理。|ECC React Next.js 無障礙 ARIA 表單
+網頁與介面|ecc:frontend-design-direction|決定產品前端的視覺方向|為網站、App、儀表板與元件制定具體的版面與視覺策略。|ECC 網頁 設計 風格 介面 UI
+網頁與介面|ecc:frontend-patterns|整理 React 與 Next.js 前端模式|規劃元件、狀態管理、表單、非同步資料與渲染效能。|ECC React Next.js 前端 元件 狀態
+簡報與文件|ecc:frontend-slides|製作有動畫的 HTML 簡報|從零建立網頁投影片，或把 PowerPoint 轉成互動網頁簡報。|ECC 簡報 投影片 HTML PPT 動畫
+測試與資安|ecc:fsharp-testing|撰寫 F# 單元與整合測試|使用 xUnit、FsUnit、FsCheck 等工具驗證 F# 程式。|ECC F# FSharp 測試 FsCheck
+AI 與 Agents|ecc:gan-style-harness|用生成與評估 Agent 反覆改進產品|以 Generator 與 Evaluator 的迭代方式建置並評估應用。|ECC Agent Generator Evaluator 迭代
+測試與資安|ecc:gateguard|修改前先提出具體程式證據|在首次編輯或命令執行前，要求說明依賴、資料與使用者指示。|ECC gate 編輯 證據 hooks
+部署與維運|ecc:generating-python-installer|將 Python 程式打包成 Windows 安裝檔|使用 Nuitka、DLL 分析與 Inno Setup 縮小並封裝程式。|ECC Python Windows 安裝檔 Nuitka Inno
+工具與程式|ecc:git-workflow|整理 Git 分支與提交流程|規劃分支、commit、merge、rebase、衝突處理與協作慣例。|ECC Git 分支 commit merge rebase 衝突
+工具與程式|ecc:github-ops|管理 GitHub PR Issue 與 CI|使用 gh CLI 處理倉庫、議題、PR、發布與 CI/CD 操作。|ECC GitHub PR Issue CI gh
+程式與架構|ecc:golang-patterns|撰寫慣用且可維護的 Go 程式|檢查 Go 程式結構、語言慣例、效率與可靠性。|ECC Go Golang 程式 架構
+測試與資安|ecc:golang-testing|撰寫 Go 測試與效能基準|建立 table-driven tests、子測試、benchmark、fuzz 與覆蓋率檢查。|ECC Go 測試 benchmark fuzz TDD
+工具與程式|ecc:google-workspace-ops|跨 Google 文件工具處理工作|整合 Drive、Docs、Sheets 與 Slides 的搜尋、整理及編輯流程。|ECC Google Drive Docs Sheets Slides 文件
+研究與寫作|ecc:growth-log|把完成的工作整理成可重用經驗|記錄根因、可轉用規則與辨識訊號，避免只寫事件流水帳。|ECC 經驗 紀錄 根因 規則 成長
+程式與架構|ecc:healthcare-cdss-patterns|設計臨床決策支援軟體|規劃藥物交互作用、劑量檢查、臨床評分與警示系統。|ECC 醫療 CDSS 藥物 臨床 軟體
+程式與架構|ecc:healthcare-emr-patterns|設計電子病歷工作流程|規劃就診、處方、決策支援整合與醫療介面存取方式。|ECC 醫療 電子病歷 EMR EHR 處方
+測試與資安|ecc:healthcare-eval-harness|驗證醫療軟體的安全與正確性|檢查決策支援、病患資料暴露、臨床流程及整合測試。|ECC 醫療 評估 安全 PHI 測試
+測試與資安|ecc:healthcare-phi-compliance|管理醫療個資存取與稽核|處理 PHI 分類、列級權限、稽核紀錄與常見資料洩漏路徑。|ECC 醫療 個資 PHI PII 權限 稽核
+工具與程式|ecc:hermes-imports|把 Hermes 工作流程整理成 ECC Skill|移除私密工作區資訊與憑證，再整理成可重用的公開產物。|ECC Hermes 匯入 Skill 脫敏
+程式與架構|ecc:hexagonal-architecture|建立六角形與 Ports & Adapters 架構|分離領域邏輯與外部依賴，設計可測試的用例與介面。|ECC 六角形 架構 Ports Adapters 領域
+測試與資安|ecc:hipaa-compliance|檢查 HIPAA 相關醫療資料處理|整理美國醫療隱私、PHI、BAA 與資料外洩處置的工作範圍。|ECC HIPAA PHI 醫療 隱私 合規
+部署與維運|ecc:homelab-network-readiness|檢查家庭實驗室網路準備度|盤點 VLAN、DNS 過濾與 WireGuard 遠端存取變更條件。|ECC homelab 網路 VLAN DNS WireGuard
+部署與維運|ecc:homelab-network-setup|規劃家庭與實驗室網路|安排路由器、交換器、AP、IP、DHCP、DNS 與佈線。|ECC 家庭 網路 homelab DHCP AP
+部署與維運|ecc:homelab-pihole-dns|設定 Pi-hole 與 DNS 過濾|處理安裝、封鎖清單、DoH、DHCP 與本地 DNS 故障。|ECC Pi-hole DNS DoH 網路 過濾
+部署與維運|ecc:homelab-vlan-segmentation|將家庭網路分成不同 VLAN|分隔 IoT、訪客與伺服器流量，設定 trunk、防火牆與 SSID。|ECC VLAN IoT 防火牆 網路 分流
+部署與維運|ecc:homelab-wireguard-vpn|建立 WireGuard 遠端 VPN|設定伺服器、peer、金鑰與 split tunnel 讓裝置連回家用網路。|ECC WireGuard VPN 遠端 網路
+工具與程式|ecc:hookify-rules|建立 Agent 事件觸發規則|用 YAML 與正規表示式匹配命令、檔案或停止事件並提示或阻擋。|ECC hookify hooks 規則 事件
+研究與寫作|ecc:i18n-sync|翻譯與同步 App 語系檔|依實際使用的 key 與專案術語更新 JSON 語系並檢查缺漏。|ECC i18n 多語 翻譯 語系 JSON
+程式與架構|ecc:inherit-legacy-style|沿用既有專案的程式風格|盤點隱含命名與架構慣例，將確認的規則整理成可執行指引。|ECC 既有 風格 慣例 legacy 程式
+程式與架構|ecc:intent-driven-development|把模糊需求變成可驗收範圍|釐清產品與工程變更，定義具體行為與可驗證的驗收條件。|ECC 需求 驗收 範圍 產品 規格
+商務與營運|ecc:inventory-demand-planning|規劃需求預測與庫存補貨|為多據點零售安排預測、ABC/XYZ 分類、安全庫存與補貨點。|ECC 庫存 預測 補貨 零售 ABC
+商務與營運|ecc:investor-materials|製作募資與投資人資料|整理 pitch deck、簡介、投資備忘錄、財務模型與資金用途。|ECC 募資 投資人 簡報 財務 pitch
+商務與營運|ecc:investor-outreach|撰寫募資聯繫與更新信|草擬給投資人、創投或加速器的介紹、追蹤與進度郵件。|ECC 募資 投資人 創投 信件 聯繫
+圖片與設計|ecc:ios-icon-gen|產生 iOS App 圖示資源|從 SF Symbols 或 Iconify 產生供 Xcode 使用的 PNG imageset。|ECC iOS 圖示 icon Xcode SF Symbols
+AI 與 Agents|ecc:iterative-retrieval|逐步補足 Agent 缺少的上下文|透過多輪縮小與修正檢索，找出子 Agent 所需背景。|ECC 檢索 上下文 子Agent retrieval
+商務與營運|ecc:ito-baskets|查詢 Itô 投資籃子與市場資料|唯讀檢視籃子清單，與研究或觀察名單比對並整理有來源的摘要。|ECC Ito 籃子 市場 資料 研究
+部署與維運|ecc:ito-compute|查詢與安排 Itô GPU 運算資源|檢查 GPU 庫存、報價、採購狀態與節點資格流程。|ECC Ito GPU 運算 報價 採購
+AI 與 Agents|ecc:ito-inference|確認 Itô 模型推論服務可用性|在已有運算預約後檢查 serving 後端，準備經確認的服務設定。|ECC Ito 推論 serving 模型 GPU
+AI 與 Agents|ecc:ito-training|確認 Itô 模型訓練工作可用性|在已有運算預約後檢查訓練後端，準備經確認的訓練設定。|ECC Ito 訓練 模型 GPU
+程式與架構|ecc:java-coding-standards|整理 Java 後端程式慣例|涵蓋 Spring Boot、Quarkus 的命名、型別、例外與專案結構。|ECC Java Spring Quarkus 規範
+工具與程式|ecc:jira-integration|讀取與更新 Jira 工作項目|查詢票券、分析需求、修改狀態或新增評論。|ECC Jira ticket 任務 議題 狀態
+資料與 API|ecc:jpa-patterns|設計 JPA 實體與資料查詢|處理 Hibernate 關聯、交易、索引、分頁與查詢效能。|ECC JPA Hibernate ORM 資料庫 Java
+資料與 API|ecc:knowledge-ops|整理與同步跨工具知識庫|管理本地檔案、MCP 記憶、向量資料庫與 Git 的知識資料。|ECC 知識庫 同步 檢索 向量 記憶
+程式與架構|ecc:kotlin-coroutines-flows|撰寫 Kotlin 非同步與資料流|處理 structured concurrency、Flow、StateFlow、錯誤與測試。|ECC Kotlin Coroutine Flow 非同步
+資料與 API|ecc:kotlin-exposed-patterns|使用 Kotlin Exposed ORM|設計 DSL 查詢、DAO、交易、連線池與 Flyway 遷移。|ECC Kotlin Exposed ORM 查詢 交易
+資料與 API|ecc:kotlin-ktor-patterns|建立 Kotlin Ktor 伺服器|設定路由、認證、依賴注入、序列化、WebSocket 與測試。|ECC Kotlin Ktor API 後端 WebSocket
+程式與架構|ecc:kotlin-patterns|撰寫慣用的 Kotlin 程式|處理 null safety、協程、DSL 與可靠的應用程式結構。|ECC Kotlin 程式 協程 DSL
+測試與資安|ecc:kotlin-testing|撰寫 Kotlin 測試|使用 Kotest、MockK、協程測試與 Kover 覆蓋率驗證程式。|ECC Kotlin Kotest MockK 測試
+部署與維運|ecc:kubernetes-patterns|部署與檢查 Kubernetes 工作負載|設定資源、RBAC、健康探針、自動擴縮與 Secret 管理。|ECC Kubernetes K8s 部署 kubectl RBAC
+程式與架構|ecc:laravel-patterns|設計 Laravel 後端應用|處理路由、Controller、Eloquent、服務層、佇列與快取。|ECC Laravel PHP 後端 Eloquent
+工具與程式|ecc:laravel-plugin-discovery|尋找合適的 Laravel 套件|透過 LaraPlugins.io MCP 評估套件健康度與 PHP 相容性。|ECC Laravel 套件 plugin PHP 搜尋
+測試與資安|ecc:laravel-security|檢查 Laravel 網站安全|檢查認證、權限、Eloquent、CSRF、XSS 與 API 安全。|ECC Laravel PHP 安全 CSRF XSS
+測試與資安|ecc:laravel-tdd|以測試驅動 Laravel 開發|用 PHPUnit、Pest、factory 與 HTTP 測試驗證應用行為。|ECC Laravel PHP TDD Pest PHPUnit
+測試與資安|ecc:laravel-verification|執行 Laravel 上線前驗證|檢查環境、格式、靜態分析、測試、安全與部署條件。|ECC Laravel 驗證 測試 靜態分析
+部署與維運|ecc:latency-critical-systems|改善即時系統延遲與新鮮度|追蹤 p50/p95/p99、資料更新時間與佇列，檢查即時服務瓶頸。|ECC 即時 延遲 串流 queue p99
+商務與營運|ecc:lead-intelligence|建立潛在客戶研究與聯繫流程|評分商機訊號、尋找引介路徑並整理符合語氣的聯繫資料。|ECC 潛在客戶 銷售 leads 聯繫
+網頁與介面|ecc:liquid-glass-design|設計 Apple Liquid Glass 介面|在 SwiftUI、UIKit 與 WidgetKit 使用動態玻璃、模糊與變形效果。|ECC iOS Liquid Glass SwiftUI 玻璃
+研究與寫作|ecc:living-docs-governance|維護長期專案文件一致性|分清規範、導覽、狀態與歷史文件角色，讓 Agent 使用正確來源。|ECC 文件 維護 狀態 歷史 一致性
+測試與資安|ecc:llm-trading-agent-security|檢查交易 Agent 的錢包安全|處理提示注入、支出上限、交易模擬、熔斷與金鑰管理。|ECC 交易 Agent 錢包 安全 注入
+商務與營運|ecc:logistics-exception-management|處理貨運延誤與損失事件|整理延遲、損壞、短缺、承運爭議、升級通報與理賠流程。|ECC 物流 延誤 損壞 理賠 貨運
+AI 與 Agents|ecc:loop-design-check|檢查 Agent 迴圈會不會空轉|定義可判定的目標，找出錯誤驗證、無限重試與錯誤答案收斂問題。|ECC Agent loop 迴圈 空轉 目標
+資料與 API|ecc:mailtrap-email-integration|串接 Mailtrap 交易郵件|整合寄信 API、沙箱測試、網域驗證與 API 認證。|ECC Mailtrap email 寄信 API 郵件
+網頁與介面|ecc:make-interfaces-feel-better|微調介面的操作與視覺細節|改善間距、字體、陰影、點擊範圍、文字換行與互動回饋。|ECC UI 美化 介面 細節 手感 間距
+動畫與互動|ecc:manim-video|製作技術概念動畫解說|以 Manim 建立數學圖形、系統圖與產品流程的可重用動畫。|ECC Manim 動畫 解說 數學 圖形
+商務與營運|ecc:market-research|研究市場規模與產業情報|以具名來源整理市場、競品、投資盡職調查與決策摘要。|ECC 市場 研究 競品 產業 規模
+商務與營運|ecc:marketing-campaign|規劃完整行銷活動|整理受眾、定位、活動角度、落地頁、郵件、廣告與短影音內容。|ECC 行銷 活動 廣告 文案 受眾
+商務與營運|ecc:master-agreement-generator|依範本產生主協議審閱稿|以範本與 JSON 規格選用合約條款，整理協議及附件工作流程。|ECC 合約 主協議 範本 條款 文件
+測試與資安|ecc:mcp-dependency-review|靜態檢查 MCP 套件依賴|在不執行 MCP server 的情況下檢查設定中的可變套件版本。|ECC MCP 依賴 版本 安全 設定
+資料與 API|ecc:mcp-server-patterns|建立 TypeScript MCP 服務|用 SDK 定義 tools、resources、prompts、驗證與傳輸方式。|ECC MCP server TypeScript SDK 工具
+工具與程式|ecc:messages-ops|查閱與核對即時訊息|讀取對話、查找驗證碼與核對訊息來源，再處理回覆工作。|ECC 訊息 簡訊 DM 驗證碼 對話
+AI 與 Agents|ecc:ml-adoption-playbook|在既有系統加入機器學習|先確認問題與資料，再設計可解耦的 ML 整合與基準驗證。|ECC ML 機器學習 導入 整合 既有
+AI 與 Agents|ecc:mle-workflow|建立可部署的機器學習流程|管理資料契約、可重現訓練、評估、部署、監控與回滾。|ECC ML 訓練 模型 部署 評估
+測試與資安|ecc:module-regression|管理跨模組回歸驗證|建立下游使用者與驗收命令清單，追蹤變更影響的測試範圍。|ECC 模組 回歸 測試 依賴 驗收
+動畫與互動|ecc:motion-advanced|製作 React 進階互動動畫|使用 motion/react 處理拖曳、手勢、文字、SVG 與指令式序列。|ECC React Motion 拖曳 手勢 動畫
+動畫與互動|ecc:motion-foundations|建立前端動畫基礎規則|定義 motion tokens、彈簧、裝置適配、無障礙與 SSR 安全原則。|ECC React Motion 動畫 彈簧 tokens
+動畫與互動|ecc:motion-patterns|製作 React 常見介面動畫|建立按鈕、彈窗、toast、轉場、捲動與 layout 動畫。|ECC React Motion 動畫 彈窗 轉場
+資料與 API|ecc:mybatis-patterns|設計 MyBatis SQL 與資料映射|處理 mapper、動態 SQL、交易、批次、分頁與查詢效能。|ECC MyBatis Java SQL mapper 查詢
+資料與 API|ecc:mysql-patterns|設計與優化 MySQL 資料庫|處理 MySQL、MariaDB 的 schema、索引、交易、複寫與連線池。|ECC MySQL MariaDB SQL 索引 交易
+AI 與 Agents|ecc:nanoclaw-repl|操作 NanoClaw Agent 工作階段|管理 markdown-backed sessions、模型切換、Skill 載入與工作分支。|ECC NanoClaw REPL session Agent
+工具與程式|ecc:nasiko-control-plane|檢查與管理 Nasiko CLI|檢視實驗性 CLI 狀態，依固定版本與明確範圍安排安裝或移除。|ECC Nasiko CLI 安裝 狀態 管理
+程式與架構|ecc:nestjs-patterns|建立 NestJS 後端架構|規劃 modules、controllers、providers、DTO、guards 與設定。|ECC NestJS TypeScript 後端 DTO
+部署與維運|ecc:netmiko-ssh-automation|用 Python 自動操作網路設備|以 Netmiko 蒐集資訊、控制 SSH 批次範圍並處理逾時與錯誤。|ECC Netmiko Python SSH 網路 自動化
+部署與維運|ecc:network-bgp-diagnostics|診斷 BGP 鄰居與路由問題|蒐集鄰居狀態、路由交換、prefix policy 與 AS path 證據。|ECC BGP 路由 網路 鄰居 診斷
+部署與維運|ecc:network-config-validation|部署前檢查網路設備設定|找出危險命令、重複位址、子網重疊與管理平面風險。|ECC 網路 設定 部署 驗證 子網
+部署與維運|ecc:network-interface-health|診斷網路介面錯誤與掉包|檢查 CRC、速度協商、duplex、flapping 與計數器趨勢。|ECC 網路 掉包 CRC 介面 錯誤
+網頁與介面|ecc:nextjs-turbopack|調整 Next.js 與 Turbopack 建置|處理開發啟動、HMR、快取與 webpack 遷移取捨。|ECC Next.js Turbopack webpack HMR 建置
+資料與 API|ecc:nodejs-keccak256|避免 Ethereum 雜湊計算錯誤|分清 Keccak-256 與 SHA3-256，正確處理簽章、位址及 selector。|ECC Ethereum Keccak hash Node.js 雜湊
+簡報與文件|ecc:nutrient-document-processing|透過 API 轉換與處理文件|使用 Nutrient DWS 進行 PDF、Office 文件的 OCR、擷取、遮蔽與簽署。|ECC Nutrient 文件 PDF OCR 轉檔 API
+網頁與介面|ecc:nuxt4-patterns|建立 Nuxt 4 應用|處理 hydration、SSR 資料取得、路由規則、延遲載入與效能。|ECC Nuxt Vue SSR hydration 前端
+AI 與 Agents|ecc:openclaw-persona-forge|設計 OpenClaw Agent 個性|建立角色定位、SOUL.md、底線規則、名字與頭像生成提示。|ECC OpenClaw 個性 角色 SOUL 頭像
+工具與程式|ecc:opensource-pipeline|整理私有專案以便開源|以 fork、敏感資料清理與打包流程準備公開發布內容。|ECC 開源 fork 脫敏 打包 發布
+AI 與 Agents|ecc:operator-approval-loop|追蹤 Agent 對外訊息核准流程|管理訊息草稿、核准紀錄、雜湊與送出收據。|ECC Agent 核准 訊息 草稿 收據
+程式與架構|ecc:orch-add-feature|協調開發全新功能|依研究、計畫、測試驅動實作與審查流程分派對應 Agent。|ECC 新功能 開發 協調 TDD Agent
+程式與架構|ecc:orch-build-mvp|從規格建立可運作的 MVP|讀取需求文件，拆成垂直切片並迭代建置與評估。|ECC MVP 原型 規格 建置 Agent
+程式與架構|ecc:orch-change-feature|協調修改既有功能行為|先更新測試到新規格，再調整實作、審查與提交。|ECC 修改 功能 規格 測試 Agent
+測試與資安|ecc:orch-fix-defect|協調重現與修復程式錯誤|先建立失敗回歸測試，再修復、審查與核對提交。|ECC bug 錯誤 修復 回歸 測試 Agent
+程式與架構|ecc:orch-pipeline|使用共用的工程協調流程|為 orch 系列提供研究、計畫、TDD、審查與提交的階段控制。|ECC orch pipeline 協調 工作流程
+程式與架構|ecc:orch-refine-code|協調不改行為的程式重構|先確認測試通過，再整理結構並持續驗證行為不變。|ECC 重構 程式 結構 測試 Agent
+研究與寫作|ecc:osint-investigation|串聯線索進行公開資訊調查|從零碎證據找線索，交叉驗證來源、位置與可能解釋。|ECC OSINT 調查 線索 地理定位 查證
+AI 與 Agents|ecc:parallel-execution-optimizer|將工作拆成可平行執行的範圍|建立依賴圖，分隔寫入範圍，安排批次讀取與最終驗證。|ECC 平行 任務 依賴圖 Agent 效率
+程式與架構|ecc:perl-patterns|撰寫現代 Perl 程式|依 Perl 5.36 以上的語言慣例整理可維護的應用程式。|ECC Perl 程式 規範
+測試與資安|ecc:perl-security|檢查 Perl 輸入與程序安全|處理 taint、驗證、安全程序執行、DBI 參數查詢與網頁風險。|ECC Perl 安全 taint DBI SQL
+測試與資安|ecc:perl-testing|建立 Perl 測試與覆蓋率檢查|用 Test2、Test::More、prove、mock 與 Devel::Cover 驗證程式。|ECC Perl 測試 prove Test2 coverage
+工具與程式|ecc:plan-canvas|在瀏覽器審閱計畫與 HTML|開啟本地畫布，讓使用者標註元素、討論與提出修改。|ECC 計畫 審閱 HTML 畫布 標註
+程式與架構|ecc:plan-orchestrate|把計畫步驟轉成 ECC 指令|解析計畫、分類步驟，產生帶步驟編號與範圍的指令。|ECC 計畫 步驟 指令 協調
+測試與資安|ecc:plankton-code-quality|在編輯時自動檢查程式品質|以 Plankton hooks 執行格式化、lint 與自動修正。|ECC Plankton lint 格式 hooks 品質
+資料與 API|ecc:postgres-patterns|設計與優化 PostgreSQL|處理資料表、查詢、索引、權限與 RLS 等資料庫模式。|ECC PostgreSQL Postgres SQL 索引 RLS
+商務與營運|ecc:prediction-market-oracle-research|研究預測市場作為訊號來源|整理市場機率與產品、Agent、儀表板的資料或 oracle 用法。|ECC 預測市場 oracle 機率 研究
+測試與資安|ecc:prediction-market-risk-review|檢查預測市場工作流程風險|檢視交易、驗證、投資組合資料、隱私與執行的安全條件。|ECC 預測市場 交易 風險 隱私
+資料與 API|ecc:prisma-patterns|使用 Prisma 管理 TypeScript 資料庫|處理 schema、交易、分頁與查詢效能，注意回傳值及逾時陷阱。|ECC Prisma ORM TypeScript 資料庫
+程式與架構|ecc:product-capability|把產品意圖轉成可實作能力計畫|從 PRD 與 roadmap 整理約束、不變條件、介面與待決事項。|ECC PRD 產品 功能 規格 架構
+商務與營運|ecc:product-lens|先判斷產品為什麼值得做|從產品定位、使用者價值與市場適合度等面向產出診斷。|ECC 產品 定位 市場 價值 診斷
+部署與維運|ecc:production-audit|檢查產品正式上線準備度|用本地程式與設定證據檢查正式環境可能失敗的地方。|ECC 正式環境 上線 審查 production
+商務與營運|ecc:production-scheduling|規劃製造排程與產線平衡|安排工作順序、換線、產能與瓶頸改善。|ECC 製造 排程 產線 產能 瓶頸
+工具與程式|ecc:project-flow-ops|串聯 GitHub 與 Linear 工作進度|整理 Issue、PR 與內部執行項目的關聯及狀態。|ECC GitHub Linear 專案 PR Issue
+AI 與 Agents|ecc:prompt-caching-strategy|提高 LLM 提示快取命中率|分析 prompt 結構，分離可快取內容以改善費用與延遲。|ECC prompt 快取 LLM 成本 延遲
+AI 與 Agents|ecc:prompt-optimizer|把草稿需求改成清楚的提示|找出意圖與缺漏背景，配對 ECC 工具並產出可貼上的優化 prompt。|ECC prompt 提示 優化 需求 指令
+程式與架構|ecc:python-patterns|撰寫可維護的 Python 程式|整理 Python 慣用寫法、PEP 8、型別提示與可靠性實務。|ECC Python PEP8 型別 程式
+測試與資安|ecc:python-testing|建立 pytest 測試|使用 fixtures、mock、參數化、TDD 與覆蓋率驗證 Python。|ECC Python pytest 測試 TDD mock
+AI 與 Agents|ecc:pytorch-patterns|建立可重現的 PyTorch 訓練|設計模型、資料載入與訓練流程，改善效率與可重現性。|ECC PyTorch 深度學習 訓練 模型
+商務與營運|ecc:quality-nonconformance|管理製造品質異常與矯正措施|整理 NCR、根因分析、CAPA 與受規範製造的處置流程。|ECC 製造 品質 NCR CAPA 8D
+程式與架構|ecc:quarkus-patterns|建立 Quarkus Java 服務|使用 REST、CDI、Panache 與 Camel 規劃資料與事件處理。|ECC Quarkus Java Camel 後端
+測試與資安|ecc:quarkus-security|設定 Quarkus 驗證與權限|處理 JWT、OIDC、RBAC、輸入驗證與安全查詢。|ECC Quarkus JWT OIDC 安全 權限
+測試與資安|ecc:quarkus-tdd|以測試驅動 Quarkus 開發|用 JUnit、Mockito、REST Assured 與 Camel 測試驗證服務。|ECC Quarkus TDD JUnit 測試
+測試與資安|ecc:quarkus-verification|檢查 Quarkus 建置與部署條件|執行建置、靜態分析、測試、安全掃描與 native compilation 檢查。|ECC Quarkus 驗證 安全 建置 GraalVM
+程式與架構|ecc:rails-patterns|設計 Ruby on Rails 應用|整理 controller、service、form、query objects 與 ActiveRecord 模式。|ECC Ruby Rails ActiveRecord 後端
+AI 與 Agents|ecc:ralphinho-rfc-pipeline|把 RFC 拆成多 Agent 任務圖|安排有依賴與驗收的工作單位，逐項研究、實作、測試並合併。|ECC RFC 多Agent 任務圖 合併
+網頁與介面|ecc:react-native-patterns|建立 React Native 與 Expo App|處理 Router、狀態分工、資料取得、列表效能與原生介面。|ECC React Native Expo 手機 App
+網頁與介面|ecc:react-patterns|使用現代 React 元件與資料模式|規劃 hooks、server/client 邊界、Suspense、表單與狀態管理。|ECC React hooks Suspense 元件 狀態
+網頁與介面|ecc:react-performance|改善 React 與 Next.js 效能|依優先級排查資料載入、bundle、渲染與其他常見前端瓶頸。|ECC React Next.js 效能 渲染 bundle
+測試與資安|ecc:react-testing|測試 React 元件與互動|使用 Testing Library、Vitest/Jest、MSW 與 axe 驗證行為。|ECC React 測試 Vitest Jest Testing Library
+資料與 API|ecc:recsys-pipeline-architect|設計推薦排序與動態牆管線|拆分來源、資料補齊、過濾、評分、選取與副作用等階段。|ECC 推薦 排序 動態牆 feed pipeline
+AI 與 Agents|ecc:recursive-decision-ledger|記錄反覆推論的決策與證據|保存每輪嘗試、評分與一致性檢查，避免只因重複推論而提高信心。|ECC 推論 決策 紀錄 recursive
+資料與 API|ecc:redis-patterns|使用 Redis 快取與分散式控制|選擇資料結構，處理分散式鎖、限流、pub/sub 與連線。|ECC Redis 快取 鎖 限流 pubsub
+資料與 API|ecc:regex-vs-llm-structured-text|決定用規則或 LLM 擷取資料|優先使用 regex，再將低信心的表格、收據與表單交給模型處理。|ECC regex LLM 擷取 收據 表單 結構化
+動畫與互動|ecc:remotion-video-creation|用 React 與 Remotion 製作影片|處理影片動畫、聲音、字幕、圖表、3D 與轉場等製作細節。|ECC Remotion React 影片 字幕 動畫
+工具與程式|ecc:repo-scan|安裝外部專案掃描 Skill|提供固定 commit 的 repo-scan 安裝入口，實際稽核由外部 Skill 執行。|ECC repo-scan 安裝 專案 稽核
+研究與寫作|ecc:research-ops|用最新證據整理研究與建議|結合公開來源與本地背景，查核現況、比較與研究結論。|ECC 研究 現況 證據 比較 來源
+商務與營運|ecc:returns-reverse-logistics|管理退貨與逆物流|整理授權、收貨檢查、商品處置、退款、詐欺辨識與保固。|ECC 退貨 逆物流 退款 保固
+工具與程式|ecc:rules-distill|把跨 Skills 原則整理成規則|找出重複出現的共通原則，整理或更新規則檔。|ECC Skills 規則 萃取 整理
+程式與架構|ecc:rust-patterns|撰寫安全且有效率的 Rust|處理 ownership、trait、錯誤與並行等慣用 Rust 模式。|ECC Rust ownership 程式 並行
+測試與資安|ecc:rust-testing|建立 Rust 單元與整合測試|處理 async、屬性測試、mock 與覆蓋率驗證。|ECC Rust 測試 async mock
+測試與資安|ecc:safety-guard|限制破壞性命令與寫入範圍|依 Careful、Freeze 或 Guard 模式攔截危險操作與越界寫入。|ECC 安全 破壞 命令 寫入 保護
+測試與資安|ecc:santa-method|以兩名獨立審查者交叉驗證|用同一標準審查輸出，失敗時修正並重審，設定人工升級界線。|ECC 驗證 獨立 審查 多Agent
+研究與寫作|ecc:scientific-db-pubmed-database|搜尋 PubMed 生醫文獻|使用 NCBI E-utilities、MeSH 與 PMID 查詢論文及引用資料。|ECC PubMed 論文 生醫 MeSH PMID
+研究與寫作|ecc:scientific-db-uspto-database|查詢美國專利與商標紀錄|檢索 USPTO、PatentSearch 與 TSDR 官方資料並保存研究紀錄。|ECC USPTO 專利 商標 patent
+研究與寫作|ecc:scientific-pkg-gget|快速查詢基因與序列資料|用 gget CLI 或 Python 搜尋基因資料庫、序列與富集資訊。|ECC gget 基因 序列 BLAST 生物資訊
+研究與寫作|ecc:scientific-thinking-literature-review|規劃系統性文獻回顧|建立搜尋與篩選計畫，統整證據、核對引用並保存研究紀錄。|ECC 文獻回顧 論文 研究 systematic review
+研究與寫作|ecc:scientific-thinking-scholar-evaluation|評估論文與研究方法|檢查論文、提案、方法、證據品質與引用支撐程度。|ECC 論文 審查 研究 方法 證據
+程式與架構|ecc:search-first|先找現有工具再決定是否開發|搜尋套件、MCP、Skills 與 GitHub，判斷採用、擴充或自行實作。|ECC 工具 搜尋 套件 開發 重用
+測試與資安|ecc:security-bounty-hunter|尋找可實際利用的資安漏洞|聚焦遠端可達、能形成有效回報的程式庫弱點。|ECC 資安 漏洞 bounty 遠端
+測試與資安|ecc:security-review|審查驗證輸入與敏感功能安全|檢查登入、秘密資訊、API、付款與其他敏感功能的風險。|ECC 安全 資安 審查 登入 API
+測試與資安|ecc:security-scan|掃描 Agent 設定的安全問題|以 AgentShield 檢查設定、MCP、hooks 與提示注入風險。|ECC AgentShield 安全 掃描 注入 設定
+網頁與介面|ecc:seo|改善網站搜尋能見度|檢查技術 SEO、頁面內容、結構化資料與 Core Web Vitals。|ECC SEO 搜尋 排名 網站 結構化資料
+AI 與 Agents|ecc:skill-comply|驗證 Agent 是否遵守 Skills|建立不同提示強度的情境，分析行為序列並回報遵循結果。|ECC Skill 規則 遵守 驗證 Agent
+工具與程式|ecc:skill-host-compat|檢查 Skill 的執行環境相容性|檢查 frontmatter 與 Claude 專用內容是否適合 Codex 或 Cursor。|ECC Skill Codex Cursor 相容 frontmatter
+工具與程式|ecc:skill-scout|先搜尋是否已有需要的 Skill|在本地、marketplace、GitHub 與網路查找可用 Skills。|ECC Skill 搜尋 尋找 marketplace GitHub
+工具與程式|ecc:skill-stocktake|盤點與評估 Skills 清單|掃描 Skills 與指令，檢查品質、重複、更新與整理需求。|ECC Skill 盤點 清單 品質 重複
+商務與營運|ecc:social-graph-ranker|分析人脈連結與引介路徑|以加權社交圖評估橋接關係、暖引介與人脈缺口。|ECC 人脈 社交圖 X LinkedIn 引介
+商務與營運|ecc:social-publisher|排程與發布社群貼文|透過 SocialClaw 管理跨平台內容排程與發布。|ECC 社群 發布 排程 SocialClaw
+程式與架構|ecc:springboot-patterns|建立 Spring Boot 後端架構|規劃 REST、分層服務、資料存取、快取、非同步與 logging。|ECC Java Spring Boot 後端 架構
+測試與資安|ecc:springboot-security|檢查 Spring Security 與權限|處理認證、驗證、CSRF、secrets、headers、限流與依賴安全。|ECC Spring Security Java 安全 權限
+測試與資安|ecc:springboot-tdd|以測試驅動 Spring Boot 開發|使用 JUnit、Mockito、MockMvc、Testcontainers 與 JaCoCo。|ECC Spring Boot TDD JUnit 測試
+測試與資安|ecc:springboot-verification|執行 Spring Boot 完整驗證|檢查建置、靜態分析、單元與整合測試、覆蓋率及安全掃描。|ECC Spring Boot 驗證 Maven Gradle
+程式與架構|ecc:story-lifecycle|用本地檔案管理開發故事與衝刺|建立 epic、user stories 與 sprint，追蹤開發循環。|ECC epic story sprint 敏捷 專案
+AI 與 Agents|ecc:strategic-compact|在適當工作階段整理上下文|於邏輯分界建議手動壓縮，保留後續任務需要的資訊。|ECC 上下文 compact 壓縮 階段
+程式與架構|ecc:swift-actor-persistence|用 Swift actor 安全保存資料|結合記憶體快取與檔案持久化，降低資料競爭問題。|ECC Swift actor 儲存 資料競爭
+程式與架構|ecc:swift-concurrency-6-2|使用 Swift 6.2 並行模式|處理主 actor、明確背景執行與 isolated conformances。|ECC Swift 並行 concurrent actor
+測試與資安|ecc:swift-protocol-di-testing|讓 Swift 外部依賴可以測試|用 protocol 注入檔案、網路與 API 介面並建立 mock。|ECC Swift 測試 protocol DI mock
+網頁與介面|ecc:swiftui-patterns|建立 SwiftUI 畫面與狀態|處理 Observable、view 組合、導航及 iOS/macOS 介面效能。|ECC SwiftUI iOS macOS UI 狀態
+動畫與互動|ecc:taste|規劃特定音樂影片的視覺風格|為 angelcore、cloud-trance、hyperpop 等短片建立色彩、光線與節奏方向。|ECC 影片 音樂 風格 色彩 節奏
+動畫與互動|ecc:taste-application|依風格包生成與剪輯影片|根據參考節奏安排鏡頭，用模型生成並套用量測的調色與剪輯。|ECC 影片 生成 風格包 剪輯 調色
+動畫與互動|ecc:taste-distillation|從參考影片萃取風格包|量測調色 LUT、鏡頭長度、關鍵畫面與疊加素材。|ECC 影片 參考 風格 LUT 節奏
+動畫與互動|ecc:tasteforge-video|整理影片風格與可編輯剪輯產物|處理多模態素材、風格工作流程、EDL/FCPXML 匯出與來源檢查。|ECC 影片 剪輯 EDL FCPXML 素材
+測試與資安|ecc:tdd-workflow|先寫失敗測試再實作功能|依紅燈、綠燈與重構循環開發，安排單元、整合與端到端驗證。|ECC TDD 測試 驅動 回歸 開發
+AI 與 Agents|ecc:team-agent-orchestration|管理多 Agent 團隊的執行範圍|安排負責人、看板、分支隔離、可見進度與合併門檻。|ECC 多Agent 團隊 看板 分工
+AI 與 Agents|ecc:team-builder|挑選 Agent 角色組成工作團隊|探索可用角色，選出最多五個成員並整理平行工作結果。|ECC Agent 團隊 角色 選擇
+工具與程式|ecc:terminal-opener|在可見終端機開啟程式|以明確執行檔與參數建立啟動計畫，提供 dry-run 與復原方式。|ECC terminal 終端機 啟動 命令
+工具與程式|ecc:terminal-ops|執行與驗證專案命令|檢查 repo、診斷 CI 或進行小幅修復，保留執行與驗證證據。|ECC 終端機 命令 CI 除錯 驗證
+測試與資安|ecc:test-collaboration|盤點與連結專案測試資產|將需求、規則、風險與 bug 對應到穩定 TEST-ID 及驗證命令。|ECC 測試 盤點 需求 TEST-ID
+程式與架構|ecc:tinystruct-patterns|使用 tinystruct Java 框架|協助 tinystruct 專案的結構、dispatcher 與相關開發模式。|ECC tinystruct Java 框架 dispatcher
+AI 與 Agents|ecc:token-budget-advisor|選擇回答深度與 token 預算|在需要控制回答長度時提供不同深度及預估用量選項。|ECC token 預算 回答 長度 深度
+工具與程式|ecc:token-card|產生 Agent token 用量卡|從本地工作紀錄整理 token 使用統計並輸出可放入文件的圖卡。|ECC token 用量 圖卡 統計
+動畫與互動|ecc:ui-demo|錄製網頁操作示範影片|用 Playwright 錄下含游標的介面導覽、操作與教學 WebM。|ECC 網頁 錄影 示範 demo WebM
+網頁與介面|ecc:ui-to-vue|將介面截圖轉成 Vue 元件|批次將設計圖轉為 Vue 3，搭配 Vant、Element Plus 等元件庫。|ECC Vue 截圖 轉程式 Vant Element
+部署與維運|ecc:uncloud|管理 Uncloud 叢集與服務|部署、擴縮及檢查服務，配置 Caddy ingress、proxy 與連接埠。|ECC Uncloud Caddy 部署 叢集
+AI 與 Agents|ecc:unified-memory|讓不同 Agent 共用工作記憶|透過 ECC Memory Vault 保存持續上下文與跨工具工作交接。|ECC 記憶 Vault Agent 交接 上下文
+工具與程式|ecc:unified-notifications-ops|整理跨工具通知與提醒|管理 GitHub、Linear、桌面與 hooks 的路由、去重與升級通知。|ECC 通知 提醒 去重 GitHub Linear
+測試與資安|ecc:verification-loop|完成工程工作後逐階段驗證|執行建置、型別、lint、測試、安全檢查與 diff 審閱。|ECC 驗證 檢查 測試 build lint
+動畫與互動|ecc:video-editing|剪輯與加強實拍影片|從原始素材安排剪輯、聲音、特效及最後調整流程。|ECC 影片 剪輯 FFmpeg Remotion 音效
+動畫與互動|ecc:videodb|檢索與編輯影音內容|用 VideoDB SDK 匯入影音、建立語音與場景索引及時間戳片段。|ECC VideoDB 影片 音訊 檢索 字幕
+簡報與文件|ecc:visa-doc-translate|翻譯簽證證明文件|OCR 辨識存款、在職及收入等文件影像，製作中英對照 PDF。|ECC 簽證 翻譯 OCR 文件 PDF
+網頁與介面|ecc:vite-patterns|設定 Vite 開發與建置流程|處理 config、插件、HMR、環境變數、proxy、SSR 與打包最佳化。|ECC Vite 建置 前端 HMR proxy
+網頁與介面|ecc:vue-patterns|使用 Vue 3 與 Pinia 開發介面|處理 Composition API、元件、響應式、Router 與 Nuxt SSR。|ECC Vue Pinia Router Nuxt 前端
+測試與資安|ecc:windows-desktop-e2e|自動測試 Windows 桌面程式|用 pywinauto 與 UI Automation 測試 WPF、WinForms、Win32 或 Qt。|ECC Windows 桌面 測試 pywinauto
+工具與程式|ecc:workspace-surface-audit|盤點專案可用的 Agent 工具|檢查 repo、MCP、plugins 與執行環境，建議合適的 ECC 工作方式。|ECC 工作區 盤點 MCP plugin 工具
+資料與 API|ecc:x-api|串接 X 與 Twitter API|處理 OAuth、貼文、討論串、時間軸、搜尋及分析資料。|ECC X Twitter API OAuth 貼文
+工具與程式|ecc:source-command-auto-update|更新 ECC 與已管理的安裝目標|拉取 ECC 最新內容，再重新安裝目前管理的項目。|ECC 更新 安裝 auto update
+程式與架構|ecc:source-command-build-fix|小幅修復建置與型別錯誤|偵測專案建置系統，逐步套用必要的最小修復。|ECC build 建置 型別 錯誤 修復
+測試與資安|ecc:source-command-cpp-review|審查 C++ 記憶體與並行安全|呼叫對應 reviewer 檢查 C++ 慣例、記憶體安全與資安問題。|ECC C++ 審查 記憶體 並行
+工具與程式|ecc:source-command-ecc-guide|瀏覽 ECC 指令與工具地圖|以指令入口查閱實際 agents、Skills、hooks、安裝範圍與文件。|ECC 指令 工具 地圖 說明
+工具與程式|ecc:source-command-epic-claim|認領 Epic 並同步負責狀態|標記 Epic issue 的協作狀態與本地負責權。|ECC epic 認領 負責 協作
+程式與架構|ecc:source-command-epic-decompose|將 Epic 拆成子任務|建立 Epic 的子工作項目，不同時建立任務分支。|ECC epic 拆解 子任務
+工具與程式|ecc:source-command-epic-publish|發布已驗證的 Epic 更新|把驗證過的 Epic 狀態同步回 issue 與本地快取。|ECC epic 發布 更新 issue
+工具與程式|ecc:source-command-epic-review|更新 Epic 審查狀態|標記待審、核准或需要修改的 Epic review 結果。|ECC epic review 審查 狀態
+工具與程式|ecc:source-command-epic-sync|同步 GitHub Epic 與本地紀錄|更新 issue 內容、標籤及本地協作快照。|ECC GitHub epic 同步 標籤
+工具與程式|ecc:source-command-epic-unblock|找出可以解除阻塞的 Epic|檢查被封鎖工作，重新開啟依賴已完成的項目。|ECC epic 阻塞 依賴 解除
+測試與資安|ecc:source-command-epic-validate|驗證 Epic 是否準備就緒|檢查 Epic 的依賴、準備條件與協作規則。|ECC epic 驗證 準備 依賴
+測試與資安|ecc:source-command-fastapi-review|審查 FastAPI 應用|檢查架構、非同步、相依注入、Pydantic、安全與可測試性。|ECC FastAPI 審查 非同步 Pydantic
+程式與架構|ecc:source-command-feature-dev|依既有架構逐步開發功能|先理解程式專案與架構，再引導完成功能開發。|ECC 功能 開發 架構 理解
+程式與架構|ecc:source-command-go-build|修復 Go 建置與 lint 問題|以小幅修改處理編譯錯誤、go vet 警告與 lint。|ECC Go 建置 go vet lint 修復
+測試與資安|ecc:source-command-go-review|審查 Go 程式正確性|檢查 Go 慣例、並行安全、錯誤處理與資安。|ECC Go 審查 並行 安全
+程式與架構|ecc:source-command-gradle-build|修復 Android 與 KMP 的 Gradle 建置|針對 Android、Kotlin Multiplatform 專案排查 Gradle 錯誤。|ECC Gradle Android KMP 建置 修復
+工具與程式|ecc:source-command-hookify|從需求建立 hook 規則|根據對話分析或明確行為要求產生新的 hook 規則檔。|ECC hookify hooks 規則 建立
+工具與程式|ecc:source-command-hookify-configure|開啟或關閉 hookify 規則|以互動方式管理現有 hookify 規則是否啟用。|ECC hookify 設定 開關 規則
+工具與程式|ecc:source-command-hookify-help|查看 hookify 系統說明|查閱 hookify 的使用方式與相關功能。|ECC hookify 教學 說明
+工具與程式|ecc:source-command-hookify-list|列出已設定的 hookify 規則|盤點目前設定中的 hookify 規則清單。|ECC hookify 清單 規則 盤點
+AI 與 Agents|ecc:source-command-instinct-export|匯出已學到的工作規則|將專案或全域範圍的 instincts 匯出成檔案。|ECC instinct 規則 匯出 學習
+AI 與 Agents|ecc:source-command-instinct-import|匯入工作規則|從檔案或 URL 匯入 instincts 到專案或全域範圍。|ECC instinct 規則 匯入 學習
+AI 與 Agents|ecc:source-command-instinct-status|查看學習規則與可信度|列出專案及全域已累積的 instincts 和信心程度。|ECC instinct 規則 狀態 信心
+工具與程式|ecc:source-command-jira|操作 Jira 需求與狀態|查閱票券、分析需求、更新狀態或新增評論。|ECC Jira ticket 需求 狀態
+AI 與 Agents|ecc:source-command-learn|從本次工作萃取可重用做法|回顧工作內容，整理候選 Skills 或經核准的指引檔。|ECC 學習 經驗 Skill 萃取
+工具與程式|ecc:source-command-plan-canvas|開啟計畫畫布供標註審閱|透過 Plan Canvas 呈現計畫或 HTML，接收標註與審閱。|ECC 計畫 畫布 HTML 審閱
+工具與程式|ecc:source-command-projects|列出已知專案與學習統計|查看已登錄專案及各自的 instincts 統計。|ECC 專案 清單 學習 統計
+AI 與 Agents|ecc:source-command-promote|將專案規則提升到全域|把可跨專案重用的 instincts 從專案範圍移到全域。|ECC 規則 全域 instinct 提升
+AI 與 Agents|ecc:source-command-prune|清理未採用的舊學習規則|刪除超過 30 天且從未提升的待審 instincts。|ECC instinct 清理 舊規則 prune
+程式與架構|ecc:source-command-refactor-clean|安全移除不再使用的程式|找出 dead code，逐次移除並在每次變更後驗證。|ECC 重構 dead code 清理 程式
+測試與資安|ecc:source-command-review-pr|從多個專門角度審查 PR|檢查程式、註解、測試、隱藏失敗、型別與簡化機會。|ECC PR 審查 review 測試 型別
+工具與程式|ecc:source-command-setup-pm|設定慣用套件管理器|配置 npm、pnpm、yarn 或 bun 的專案使用偏好。|ECC npm pnpm yarn bun 套件
+工具與程式|ecc:source-command-skill-host-compat|檢查 Skill 跨 Agent 格式相容性|檢查 Codex、Cursor 能否安全使用 frontmatter 與指令內容。|ECC Skill 相容 Codex Cursor
+測試與資安|ecc:source-command-test-coverage|找出測試覆蓋缺口|分析 coverage、辨識未涵蓋行為並補上需要的測試。|ECC 測試 覆蓋率 coverage 缺口
+工具與程式|ecc:source-command-token-card|從工作紀錄產生 token 用量圖卡|呼叫 token-card 整理本地 Agent session 的用量視覺。|ECC token 用量 圖卡 session
+研究與寫作|ecc:source-command-update-codemaps|產生精簡的專案架構地圖|掃描專案結構並整理節省上下文的程式導覽文件。|ECC 架構 地圖 codemap 專案
+研究與寫作|ecc:source-command-update-docs|依實際程式同步文件|從 scripts、schema、routes 與 exports 等權威來源更新說明。|ECC 文件 更新 同步 schema routes
+工具與程式|computer-use:computer-use|透過畫面操作 Windows 應用|使用電腦操作工具讀取畫面並控制 Windows 應用程式。|computer use 電腦 Windows 畫面 操作
+網頁與介面|visualize:visualize|建立可互動的圖解與工具|在對話中製作圖表、模擬、比較或可探索的視覺化工具。|視覺化 互動 圖解 圖表 模擬 visualize
+部署與維運|cloud-environment:cloud-environment-runtime|檢查與操作受管理雲端環境|讀取環境網路與憑證政策，處理 Docker、proxy、VPN 與通訊診斷。|雲端 環境 Docker proxy Tailscale VPN
+簡報與文件|openai-templates:artifact-template-analytics-dashboard|用範本製作分析儀表板試算表|套用 Analytics Dashboard 範本呈現成長、留存、營收與轉換 KPI。|範本 試算表 儀表板 KPI 分析
+簡報與文件|openai-templates:artifact-template-business-review|用範本製作業務回顧簡報|整理績效、KPI、部門結果、策略與未來展望。|範本 簡報 業務回顧 KPI 績效
+簡報與文件|openai-templates:artifact-template-design-report|用範本製作設計報告|依既定文件格式整理摘要、發現、影響、建議與附錄。|範本 設計報告 文件 摘要 建議
+簡報與文件|openai-templates:artifact-template-experiment-analysis|用範本製作實驗分析報告|整理假設、方法、結果、解讀、限制與下一步。|範本 實驗 分析 報告 假設
+簡報與文件|openai-templates:artifact-template-financial-budget|用範本製作預算試算表|比較實績、預算、情境預測、差異、現金續航與部門計畫。|範本 預算 財務 試算表 forecast
+簡報與文件|openai-templates:artifact-template-investment-committee-memo|用範本製作投委會備忘錄|整理投資論點、交易條件、財務與投資決策所需資訊。|範本 投資 投委會 備忘錄 財務
+簡報與文件|openai-templates:artifact-template-legal-memorandum|用範本製作法律備忘錄|依問題、簡答、事實、分析與結論結構撰寫審閱文件。|範本 法律 備忘錄 文件 分析
+簡報與文件|openai-templates:artifact-template-market-trends-report|用範本製作市場趨勢簡報|整理產業趨勢、支撐證據、影響及建議行動。|範本 市場 趨勢 簡報 產業
+簡報與文件|openai-templates:artifact-template-minimal-letterhead|用簡潔信紙範本寫商務信件|依信頭版面填入寄件者、收件者、內容與簽名。|範本 商務 信件 信紙 letterhead
+簡報與文件|openai-templates:artifact-template-operating-calendar|用範本製作營運行事曆|在試算表中安排年度與每月里程碑、活動、上線與截止日。|範本 行事曆 營運 排程 試算表
+簡報與文件|openai-templates:artifact-template-operating-review|用範本製作營運週會簡報|整理評分卡、各職能進度、風險、決策與待辦事項。|範本 營運 週會 簡報 進度
+簡報與文件|openai-templates:artifact-template-project-kickoff|用範本製作專案啟動簡報|對齊目標、範圍、角色、里程碑、風險與合作方式。|範本 專案 啟動 簡報 kickoff
+簡報與文件|openai-templates:artifact-template-project-tracker|用範本製作專案追蹤表|追蹤工作、負責人、狀態、優先級、日期與甘特排程。|範本 專案 追蹤 甘特 試算表
+簡報與文件|openai-templates:artifact-template-sales-pipeline|用範本製作銷售商機表|追蹤商機、階段、負責人、金額、機率、預測與下一步。|範本 銷售 商機 pipeline 試算表
+簡報與文件|openai-templates:artifact-template-simple-dark-mode|用深色範本製作簡報|套用深色版面、大字體、簡潔章節、圖表與圖片。|範本 深色 暗色 簡報 投影片
+簡報與文件|openai-templates:artifact-template-simple-light-mode|用淺色範本製作簡報|套用留白較多的淺色版面，安排字體、章節、圖表與圖片。|範本 淺色 白底 簡報 投影片
+簡報與文件|openai-templates:artifact-template-strategy-memorandum|用範本製作策略備忘錄|整理策略背景、選項、理由、風險、里程碑與建議。|範本 策略 備忘錄 建議 決策
+簡報與文件|openai-templates:artifact-template-system-design|用範本製作系統設計文件|記錄需求、架構、元件、資料流、API、取捨與維運考量。|範本 系統 設計 架構 API 文件
+簡報與文件|openai-templates:artifact-template-team-alignment|用範本製作團隊共識簡報|整理背景、目標、優先順序、決策與行動項目。|範本 團隊 共識 簡報 offsite
+簡報與文件|openai-templates:artifact-template-three-statement-forecast|用範本建立財務三表預測|整合損益、資產負債與現金流量的預測試算表。|範本 財務 三表 預測 試算表
+工具與程式|plugin-creator:create-plugin|建立 ChatGPT 或 Codex plugin|製作含 MCP 工具、Skills 或介面的本地或雲端 plugin。|plugin 外掛 建立 MCP 工具
+工具與程式|plugin-creator:prepare-plugin-submission|準備 plugin 公開送審資料|整理發布 metadata、上架資訊、範例、示範及審查存取方式。|plugin 送審 上架 發布 審查
+工具與程式|plugin-creator:update-plugin|修改與擴充已有 plugin|檢查並更新有權編輯的 plugin 指令、工具、介面與資產。|plugin 更新 修改 工具 介面
+工具與程式|plugin-management:plugin-management|尋找與管理 plugins|探索適合的外掛，檢查權限、依賴、連線與移除選項。|plugin 外掛 管理 搜尋 權限
+網頁與介面|sites:sites|用 Sites 建立與發布網站|製作或修改網站、工具、儀表板與其他網頁，處理發布流程。|Sites 網站 網頁 發布 部署
+網頁與介面|sites:sites-remix|從已有 Sites 網站建立新版本|以指定來源網站 remix 成一個新的 Site。|Sites 網站 remix 複製 改編
+圖片與設計|work-pets:create-pet|製作 ChatGPT 動畫寵物|依角色、品牌或參考圖建立、修復、預覽並啟用自訂動畫寵物。|ChatGPT 寵物 動畫 吉祥物 sprite
+工具與程式|work-pets:pets|查看與管理 ChatGPT 寵物|列出、檢查、選用、下載或刪除 ChatGPT Work 的動畫寵物。|ChatGPT 寵物 清單 選擇 管理
+圖片與設計|work-pets:update-pet|修改 ChatGPT 動畫寵物|更新現有自訂寵物的名稱、說明或 sprite sheet 並檢查預覽。|ChatGPT 寵物 修改 動畫 sprite
+簡報與文件|documents:documents|建立與編輯 Word 文件成品|處理 DOCX、修訂、評論與 Google Docs 目標文件，渲染後核對版面。|Word DOCX 文件 修訂 評論 Google Docs
+簡報與文件|pdf:pdf|製作並檢查 PDF 版面|讀取、生成、渲染及驗證 PDF，也涵蓋可填寫表單。|PDF 文件 版面 渲染 表單
+簡報與文件|presentations:Presentations|建立 PowerPoint 與 Google Slides 簡報|讀取、製作或編輯簡報，依任務查閱版面與範本指引。|簡報 PowerPoint PPT PPTX Google Slides
+簡報與文件|spreadsheets:excel-live-control|直接操作已開啟的 Excel|透過連接的 Excel 工作階段，檢查與修改正在使用的活頁簿。|Excel 即時 活頁簿 操作 連接
+簡報與文件|spreadsheets:Spreadsheets|建立並分析試算表檔案|製作與修改 Excel 或 Google Sheets，處理公式、格式、圖表與重算。|Excel Google Sheets 試算表 公式 圖表
+簡報與文件|template-creator:template-creator|將參考文件做成個人範本 Skill|從文件、簡報或試算表建立或更新可重用的個人產物範本。|範本 template Skill 文件 簡報 試算表

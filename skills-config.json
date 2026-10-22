@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "skillRoots": [
+    "~/.codex/skills",
+    "~/.agents/skills",
+    "~/.claude/skills",
+    "~/.cursor/skills",
+    "~/.config/opencode/skills",
+    "./.codex/skills",
+    "./.agents/skills",
+    "./.claude/skills"
+  ],
+  "pluginCaches": [
+    "~/.codex/plugins/cache",
+    "~/.claude/plugins/cache"
+  ],
+  "includeAuxiliary": false
+}
