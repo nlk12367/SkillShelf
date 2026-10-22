@@ -3,6 +3,9 @@ import importlib.util
 import json
 import os
 import tempfile
+import subprocess
+import sys
+import time
 import unittest
 from pathlib import Path
 from unittest.mock import patch
@@ -127,8 +130,101 @@ class ScannerTests(unittest.TestCase):
     def test_plugin_manifest_cannot_read_outside_its_root(self):
         prefix = self.plugin()
         self.write(prefix + '/.codex-plugin/plugin.json', json.dumps({'name': 'example', 'skills': '../../../../outside'}))
-        with self.assertRaises(ValueError):
-            self.scan()
+        self.skill('skills/valid/SKILL.md', 'valid')
+        result = self.scan()
+        self.assertEqual([s['name'] for s in result['skills']], ['valid'])
+        self.assertTrue(any(d.get('code') == 'plugin-invalid' for d in result['diagnostics']))
+
+    def test_bad_plugins_do_not_block_valid_plugins(self):
+        self.plugin(namespace='valid')
+        for i, manifest in enumerate(['{broken', '[]', '{"name": null}', '{"skills": 12}', '{"skills": [false]}']):
+            prefix = self.plugin(namespace=f'broken{i}')
+            self.write(prefix + '/.codex-plugin/plugin.json', manifest)
+        result = self.scan()
+        self.assertEqual([s['name'] for s in result['skills']], ['valid:ExactCase'])
+        self.assertEqual(sum(d.get('code') == 'plugin-invalid' for d in result['diagnostics']), 5)
+
+    def test_oversized_file_is_not_read_in_full(self):
+        self.config['scanLimits'] = {'maxSkillBytes': 1024}
+        self.write('skills/huge/SKILL.md', 'x' * 4096)
+        self.skill('skills/valid/SKILL.md', 'valid')
+        result = self.scan()
+        self.assertEqual([s['name'] for s in result['skills']], ['valid'])
+        self.assertEqual(len(result['readErrors']), 1)
+
+    def test_depth_and_excluded_directories_are_pruned(self):
+        self.config.update(scanLimits={'maxDepth': 1}, excludeDirectories=['vendor'])
+        self.skill('skills/shallow/SKILL.md', 'shallow')
+        self.skill('skills/deep/nested/SKILL.md', 'deep')
+        self.skill('skills/vendor/nested/SKILL.md', 'vendor')
+        result = self.scan()
+        self.assertEqual([s['name'] for s in result['skills']], ['shallow'])
+        self.assertTrue(any(d.get('code') == 'depth-limit' for d in result['diagnostics']))
+        self.assertFalse(any('vendor' in d['label'] for d in result['diagnostics']))
+
+    def test_global_file_entry_and_byte_budgets(self):
+        for i in range(10):
+            self.skill(f'skills/{i}/SKILL.md', f'skill{i}')
+        self.config['scanLimits'] = {'maxFiles': 2}
+        self.assertEqual(len(self.scan()['skills']), 2)
+        self.config['scanLimits'] = {'maxEntries': 3}
+        result = self.scan()
+        self.assertLessEqual(result['scanStats']['entries'], 3)
+        self.assertTrue(any(d.get('code') == 'entry-limit' for d in result['diagnostics']))
+        self.config['scanLimits'] = {'maxTotalBytes': 100}
+        self.assertLessEqual(self.scan()['scanStats']['bytesRead'], 100)
+
+    def test_invalid_limit_types_fail_before_scanning(self):
+        for limits in ({'maxFiles': True}, {'maxSkillBytes': 0}, {'maxDepth': -1}, {'unknown': 1}):
+            self.config['scanLimits'] = limits
+            with self.assertRaises(ValueError):
+                self.scan()
+
+    def test_atomic_staging_failure_preserves_all_old_outputs(self):
+        first = self.write('skills-index.json', '{"old": true}')
+        second = self.write('Skills查詢工具.html', 'old html')
+        with patch.object(scanner.os, 'fsync', side_effect=[None, OSError('disk full')]):
+            with self.assertRaises(OSError):
+                scanner.atomic_outputs([(first, '{"new": true}'), (second, 'new html')])
+        self.assertEqual(json.loads(first.read_text()), {'old': True})
+        self.assertEqual(second.read_text(), 'old html')
+        self.assertEqual(list(self.base.glob('.*.tmp')), [])
+
+    def test_process_killed_before_replace_preserves_old_catalog(self):
+        target = self.write('skills-index.json', '{"old": true}')
+        marker = self.base / 'staged'
+        code = '''import importlib.util, sys, time
+from pathlib import Path
+spec = importlib.util.spec_from_file_location('scanner', sys.argv[1])
+scanner = importlib.util.module_from_spec(spec)
+spec.loader.exec_module(scanner)
+def pause(*args):
+    Path(sys.argv[3]).write_text('ready')
+    time.sleep(30)
+scanner.os.replace = pause
+scanner.atomic_outputs([(Path(sys.argv[2]), '{"new": true}')])
+'''
+        process = subprocess.Popen([sys.executable, '-c', code, str(BASE / 'scan-skills.py'),
+                                    str(target), str(marker)])
+        try:
+            deadline = time.monotonic() + 5
+            while not marker.exists() and process.poll() is None and time.monotonic() < deadline:
+                time.sleep(0.02)
+            self.assertTrue(marker.exists(), 'Child did not reach staged-write checkpoint')
+        finally:
+            process.kill()
+            process.wait(timeout=5)
+        self.assertEqual(json.loads(target.read_text()), {'old': True})
+
+    def test_atomic_replace_failure_keeps_valid_old_file(self):
+        target = self.write('skills-index.json', '{"old": true}')
+        with patch.object(scanner.os, 'replace', side_effect=PermissionError('locked')):
+            with self.assertRaises(PermissionError):
+                scanner.atomic_outputs([(target, '{"new": true}')])
+        self.assertEqual(json.loads(target.read_text()), {'old': True})
+        scanner.atomic_outputs([(target, '{"new": true}')])
+        self.assertEqual(json.loads(target.read_text()), {'new': True})
+        self.assertEqual(list(self.base.glob('.*.tmp')), [])
 
 
 if __name__ == '__main__':

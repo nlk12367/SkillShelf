@@ -21,3 +21,10 @@ installed-skills.*
 excluded-skill-copies.csv
 inventory-skills.ps1
 *.log
+ai-translations.json
+ai-translation-settings.json
+ai-translations.json.*.tmp
+ai-translation-settings.json.*.tmp
+.skills-raw.json-*.tmp
+.skills-index.json-*.tmp
+.Skills查詢工具.html-*.tmp

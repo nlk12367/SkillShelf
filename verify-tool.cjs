@@ -33,7 +33,7 @@ function fixtureCatalog() {
     if(!realCatalog){
       fixtureFile=path.join(__dirname,'.test-browser-'+randomUUID()+'.html');
       let html=fs.readFileSync(path.join(__dirname,'tool-shell.html'),'utf8');
-      html=html.replace('/*__STYLES__*/',()=>fs.readFileSync(path.join(__dirname,'tool.css'),'utf8')).replace('/*__APP__*/',()=>fs.readFileSync(path.join(__dirname,'tool.js'),'utf8')).replace('/*__DATA__*/',()=>JSON.stringify(index).replaceAll('<','\\u003c'));
+      html=html.replace('/*__STYLES__*/',()=>fs.readFileSync(path.join(__dirname,'tool.css'),'utf8')).replace('/*__APP__*/',()=>fs.readFileSync(path.join(__dirname,'ui-language.js'),'utf8')+'\n'+fs.readFileSync(path.join(__dirname,'tool.js'),'utf8')).replace('/*__DATA__*/',()=>JSON.stringify(index).replaceAll('<','\\u003c'));
       fs.writeFileSync(fixtureFile,html);htmlFile=fixtureFile;
     }
     const url=pathToFileURL(htmlFile).href;

@@ -14,5 +14,13 @@
     "~/.codex/plugins/cache",
     "~/.claude/plugins/cache"
   ],
-  "includeAuxiliary": false
+  "includeAuxiliary": false,
+  "scanLimits": {
+    "maxSkillBytes": 1048576,
+    "maxTotalBytes": 67108864,
+    "maxFiles": 10000,
+    "maxEntries": 100000,
+    "maxDepth": 16
+  },
+  "excludeDirectories": []
 }

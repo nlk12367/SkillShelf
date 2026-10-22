@@ -8,7 +8,7 @@
 
 Find installed Agent Skills by what you need to build, organize the ones you use, and turn the skill command, requirements, and file references into a Markdown prompt. SkillShelf brings local, shared, project, and plugin sources into one catalog.
 
-The interface currently uses Traditional Chinese. Search accepts Chinese descriptions and English skill names.
+Choose English or Traditional Chinese during first-launch setup. Your language and optional translation choice are remembered. You can change them later in **Language & translation** above the Update button.
 
 ## Table of contents
 
@@ -32,9 +32,12 @@ Downloading a skill is quick; managing the collection takes more work. I built S
 - Favorite, hide, and organize skills.
 - On desktop, drop or paste files to collect their names and full paths, then choose which references to include.
 - Copy the skill command, task, and selected resources as a Markdown prompt.
-- Click **更新 Skills 清單** in the desktop app to rescan without restarting, keeping your task and resource selections.
+- Click **Update skills** in the desktop app to rescan without restarting, keeping your task and resource selections.
+- Optionally use your own OpenAI-compatible API to add missing Chinese purpose descriptions. On first launch, choose whether to set it up; declining is remembered. **Language & translation** above the Update button lets you change this later.
 
 Hiding a skill in SkillShelf doesn't disable it in your agent.
+
+AI translation is off by default. Configure the API URL, model and key to enable it. Only names and purpose summaries (or a few headings when no summary exists) are sent to your provider; tasks, resource files and full Skill instructions are excluded. Provider charges may apply. Keys are encrypted through OS secure storage; completed translations are cached. This feature is available in the desktop app.
 
 ## Install and launch
 
@@ -56,26 +59,26 @@ Windows file paths and clipboard integration have been verified. macOS and Linux
 ## Use a skill
 
 1. Search for a task or skill name.
-2. Select a skill and enter your request in **任務**.
-3. Open **資源收納**, drop or paste files, and check the references you want to include.
-4. Click **複製使用指令**, then paste the prompt into your agent.
+2. Select a skill and enter your request in **Task**.
+3. Open **Resources**, drop or paste files, and check the references you want to include.
+4. Click **Copy prompt**, then paste the prompt into your agent.
 
 Example output:
 
 ```markdown
 /ecc:api-design
 
-# 任務
+# Task
 Design a member API with pagination and consistent error responses.
 
-# 資源
-1. 檔案：requirements.md
-   路徑：C:\Projects\skillshelf\docs\requirements.md
-2. 檔案：schema.json
-   路徑：C:\Projects\skillshelf\schemas\schema.json
+# Resources
+1. File: requirements.md
+   Path: C:\Projects\skillshelf\docs\requirements.md
+2. File: schema.json
+   Path: C:\Projects\skillshelf\schemas\schema.json
 ```
 
-The section labels follow the Chinese interface. Files are referenced by path, not uploaded; the receiving agent must be able to access them. With no resources selected, the resource section is omitted.
+Markdown section labels follow the selected interface language; skill commands and your text stay unchanged. Files are referenced by path, not uploaded; the receiving agent must be able to access them. With no resources selected, the resource section is omitted.
 
 ## More information
 

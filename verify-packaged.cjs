@@ -30,7 +30,10 @@ const {_electron}=require('playwright');
       CODEX_HOME:path.join(directory,'empty-codex'),SKILLS_TOOL_TEST_MODE:'1'};
     delete environment.ELECTRON_RUN_AS_NODE;delete environment.NODE_PATH;delete environment.PYTHONPATH;
     desktop=await _electron.launch({executablePath:executable,env:environment,timeout:60000});
-    const page=await desktop.firstWindow();await page.waitForFunction(()=>window.SkillsTool?.count===2);
+    const page=await desktop.firstWindow();
+    await page.waitForFunction(()=>window.skillsDesktop&&window.SkillsTool);
+    if(await page.evaluate(async()=>typeof window.skillsDesktop.translationSettings==='function'&&!(await window.skillsDesktop.translationSettings()).onboarded)){await page.locator('#translation-onboarding').waitFor({state:'visible'});await page.locator('#translation-skip').click();await page.locator('#translation-onboarding').waitFor({state:'hidden'});}
+    await page.waitForFunction(()=>window.SkillsTool?.count===2);
     const errors=[];page.on('pageerror',error=>errors.push(error.message));
     assert.equal(await desktop.evaluate(({app})=>app.isPackaged),true);
     assert.equal(await desktop.evaluate(({app})=>app.getName()),'SkillShelf');

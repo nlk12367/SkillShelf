@@ -2,6 +2,10 @@
 (() => {
   const data = JSON.parse(document.getElementById('skill-data').textContent);
   const $ = id => document.getElementById(id);
+  const language=window.SkillShelfLanguage;
+  function displayTitle(skill){return language?.locale==='en'?(skill.baseName||skill.name).replace(/[-_]+/g,' ').replace(/\b[a-z]/g,c=>c.toUpperCase()):skill.title;}
+  function displaySummary(skill){if(language?.locale!=='en')return skill.summary;const description=skill.originalDescription||skill.description||'';return description?description.slice(0,240)+(description.length>240?'…':''):'Open the original instructions for details.';}
+  function changeLanguage(value){language?.setLanguage(value);applyCatalog({...data});$('onboarding-language').value=value;$('settings-language').value=value;}
   const escape = text => String(text).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   function stored(key, fallback) { try { const value=JSON.parse(localStorage.getItem(key)); return Array.isArray(value)?value:fallback; } catch { return fallback; } }
   let favorites = new Set(stored('skills-tool:favorites:v1', []));
@@ -93,7 +97,11 @@
     try{
       const next=await window.skillsDesktop.refreshCatalog();
       applyCatalog(next);
-      toast(`清單已更新：${data.skills.length} 份 Skills${data.readErrors?.length?`，${data.readErrors.length} 個檔案讀取失敗，請至管理與來源查看。`:'。'}`);
+      const translation=next.translation;
+      const status=$('translation-status');
+      const translationMessage=translation?.error||next.translationWarning|| (translation?.enabled?`本次翻譯 ${translation.translated} 項${translation.remaining?`，${translation.remaining} 項待補中文，可再次更新。`:'。'}`:'');
+      status.textContent=translationMessage;status.hidden=!translationMessage;
+      toast(`清單已更新：${data.skills.length} 份 Skills${data.readErrors?.length||(data.diagnostics||[]).some(d=>d.kind==='warning')?'，部分項目未完成，請至管理與來源查看。':'。'}`);
     }catch(error){toast('更新失敗，已保留目前清單。'+error.message);}
     finally{refreshing=false;button.disabled=false;button.textContent='更新 Skills 清單';button.removeAttribute('aria-busy');}
   }
@@ -154,7 +162,7 @@
     $('categories').innerHTML=html;
   }
   function navButton(id,label,icon,count) {return `<button type="button" class="nav-button${state.category===id?' active':''}" data-category="${escape(id)}"${state.category===id?' aria-current="page"':''}><span class="nav-mark" aria-hidden="true">${escape(icon)}</span><span>${escape(label)}</span><span class="nav-count">${count}</span></button>`;}
-  function favoriteButton(skill) {const saved=favorites.has(skill.id);return `<button type="button" class="favorite-button${saved?' saved':''}" data-favorite="${skill.id}" aria-label="${saved?'取消收藏':'收藏'}：${escape(skill.title)}" aria-pressed="${saved}">${saved?'★':'☆'}</button>`;}
+  function favoriteButton(skill) {const saved=favorites.has(skill.id);return `<button type="button" class="favorite-button${saved?' saved':''}" data-favorite="${skill.id}" aria-label="${saved?'取消收藏':'收藏'}：${escape(displayTitle(skill))}" aria-pressed="${saved}">${saved?'★':'☆'}</button>`;}
   function renderResults() {
     const rows=searchSkills(state.query,state.category,state.sort,state.source);
     const visible=rows.slice(0,state.limit);
@@ -168,7 +176,7 @@
     } else {
       $('results').innerHTML=visible.map(({skill,reasons})=>{
         const [icon,bg,ink]=icons[skill.category]||icons['工具與程式'];
-        return `<article class="skill-card${state.selected===skill.id?' selected':''}" data-card="${skill.id}"><button type="button" class="skill-select" data-select="${skill.id}" aria-label="查看 ${escape(skill.title)}" aria-pressed="${state.selected===skill.id}"><span class="skill-icon" aria-hidden="true" style="--tile-bg:${bg};--tile-ink:${ink}">${escape(icon)}</span><span class="card-main"><span class="card-title">${escape(skill.title)}</span><span class="card-name">${escape(skill.name)}</span><span class="card-summary">${escape(skill.summary)}</span><span class="card-tags"><span class="tag">${escape(skill.category)}</span>${skill.plugin?`<span class="tag">${escape(skill.plugin)}</span>`:''}${skill.engine?`<span class="tag">${escape(skill.engine)}</span>`:''}${state.query&&reasons.length?`<span class="tag match">符合：${escape(reasons[0])}</span>`:''}</span></span></button>${favoriteButton(skill)}</article>`;
+        return `<article class="skill-card${state.selected===skill.id?' selected':''}" data-card="${skill.id}"><button type="button" class="skill-select" data-select="${skill.id}" aria-label="查看 ${escape(displayTitle(skill))}" aria-pressed="${state.selected===skill.id}"><span class="skill-icon" aria-hidden="true" style="--tile-bg:${bg};--tile-ink:${ink}">${escape(icon)}</span><span class="card-main"><span class="card-title" data-skill-content>${escape(displayTitle(skill))}</span><span class="card-name">${escape(skill.name)}</span><span class="card-summary" data-skill-content>${escape(displaySummary(skill))}</span><span class="card-tags"><span class="tag">${escape(skill.category)}</span>${skill.plugin?`<span class="tag">${escape(skill.plugin)}</span>`:''}${skill.engine?`<span class="tag">${escape(skill.engine)}</span>`:''}${skill.guideSource==='ai'?'<span class="tag">AI 翻譯</span>':''}${state.query&&reasons.length?`<span class="tag match">符合：${escape(reasons[0])}</span>`:''}</span></span></button>${favoriteButton(skill)}</article>`;
       }).join('');
     }
     $('load-more').hidden=rows.length<=state.limit;
@@ -184,6 +192,7 @@
   function statusLabel(skill) {return ({enabled:'Plugin 設定已啟用',disabled:'Plugin 設定已停用',unknown:'已收錄，啟用設定待確認',local:'已收錄'})[skill.status]||'已收錄';}
   function prompt(skill) {
     const resources=state.resources.filter(item=>item.selected!==false&&item.path.trim());
+    if(language?.locale==='en')return `/${skill.name}\n\n# Task\n${state.task.trim()||'Describe your task'}${resources.length?'\n\n# Resources\n'+resources.map((item,index)=>`${index+1}. File: ${item.name||resourceName(item.path)}\n   Path: ${item.path}`).join('\n'):''}`;
     return `/${skill.name}\n\n# 任務\n${state.task.trim()||'帶上自己的需求'}${resources.length?'\n\n# 資源\n'+resources.map((item,index)=>`${index+1}. 檔案：${item.name||resourceName(item.path)}\n   路徑：${item.path}`).join('\n'):''}`;
   }
   function resourceName(path) {return path.replace(/[\\/]+$/,'').split(/[\\/]/).filter(Boolean).pop()||path;}
@@ -212,7 +221,7 @@
   function renderDetail() {
     const skill=skillById.get(state.selected);
     if(!skill){$('detail').innerHTML='<div class="detail-content"><h2>找到工具後，在這裡查看</h2><p class="detail-desc">搜尋需求或瀏覽分類，再選擇一個 Skill。</p></div>';return;}
-    $('detail').innerHTML=`<div class="detail-top"><button type="button" class="mobile-back" data-back="true">‹ 返回搜尋結果</button><div class="detail-topline"><span><span class="tag">${escape(skill.category)}</span>${skill.plugin?`<span class="tag">${escape(skill.plugin)}</span>`:''}</span>${favoriteButton(skill)}</div><h2 class="detail-title">${escape(skill.title)}</h2><p class="detail-name">${escape(skill.name)}</p><p class="detail-desc">${escape(skill.summary)}</p>${skill.isTemplate?'<p class="inline-note">這是空白範本，請先定義內容後再作為工作 Skill 使用。</p>':''}</div><div class="detail-content"><code class="skill-command" id="skill-command">/${escape(skill.name)}</code><label class="field-label" for="task">任務</label><textarea id="task" placeholder="在這裡寫下你要做的事情…">${escape(state.task)}</textarea><details id="resources" class="resources-section"><summary>資源收納<small>選填，勾選後帶入 prompt</small></summary><div id="resource-dropzone" class="resource-dropzone" tabindex="0" role="group" aria-label="拖曳或貼上資源檔案"><strong>將檔案拖曳到這裡</strong><span>或在這裡按 Ctrl+V 貼上檔案</span><div class="resource-file-actions"><button type="button" id="choose-resource-files">選擇檔案</button><button type="button" id="paste-resource-files">貼上檔案</button></div></div><details class="resource-manual"><summary>手動加入路徑</summary><label class="sr-only" for="resource-intake">貼上資源路徑，可一次多行</label><textarea id="resource-intake" class="resource-intake" placeholder="貼上檔案或資料夾路徑，可一次多行"></textarea><button type="button" id="add-resource" class="resource-add">收納資源</button></details><div id="resource-list"></div></details><button type="button" class="copy-button" id="copy-prompt"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg>複製使用指令</button><p class="copy-help">複製後，貼到 Codex 對話即可使用</p><details class="prompt-details"><summary>預覽將複製的指令</summary><pre class="prompt-block" id="prompt-preview"></pre></details><div class="meta-divider"></div><div class="skill-status"><span>${escape(statusLabel(skill))}</span><button type="button" class="plain-button" id="toggle-hidden">${hidden.has(skill.id)?'還原到搜尋結果':'在搜尋結果隱藏'}</button></div><details><summary>查看原始用途說明</summary><p class="original-description">${escape(skill.description||'此檔案沒有 description 欄位；中文用途依內文整理。')}</p></details><details><summary>查看完整 SKILL.md</summary><pre class="original-text">${escape(skill.body)}</pre></details></div>`;
+    $('detail').innerHTML=`<div class="detail-top"><button type="button" class="mobile-back" data-back="true">‹ 返回搜尋結果</button><div class="detail-topline"><span><span class="tag">${escape(skill.category)}</span>${skill.plugin?`<span class="tag">${escape(skill.plugin)}</span>`:''}</span>${favoriteButton(skill)}</div><h2 class="detail-title" data-skill-content>${escape(displayTitle(skill))}</h2><p class="detail-name">${escape(skill.name)}</p><p class="detail-desc" data-skill-content>${escape(displaySummary(skill))}</p>${skill.isTemplate?'<p class="inline-note">這是空白範本，請先定義內容後再作為工作 Skill 使用。</p>':''}</div><div class="detail-content"><code class="skill-command" id="skill-command">/${escape(skill.name)}</code><label class="field-label" for="task">任務</label><textarea id="task" placeholder="在這裡寫下你要做的事情…">${escape(state.task)}</textarea><details id="resources" class="resources-section"><summary>資源收納<small>選填，勾選後帶入 prompt</small></summary><div id="resource-dropzone" class="resource-dropzone" tabindex="0" role="group" aria-label="拖曳或貼上資源檔案"><strong>將檔案拖曳到這裡</strong><span>或在這裡按 Ctrl+V 貼上檔案</span><div class="resource-file-actions"><button type="button" id="choose-resource-files">選擇檔案</button><button type="button" id="paste-resource-files">貼上檔案</button></div></div><details class="resource-manual"><summary>手動加入路徑</summary><label class="sr-only" for="resource-intake">貼上資源路徑，可一次多行</label><textarea id="resource-intake" class="resource-intake" placeholder="貼上檔案或資料夾路徑，可一次多行"></textarea><button type="button" id="add-resource" class="resource-add">收納資源</button></details><div id="resource-list"></div></details><button type="button" class="copy-button" id="copy-prompt"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg>複製使用指令</button><p class="copy-help">複製後，貼到 Codex 對話即可使用</p><details class="prompt-details"><summary>預覽將複製的指令</summary><pre class="prompt-block" id="prompt-preview"></pre></details><div class="meta-divider"></div><div class="skill-status"><span>${escape(statusLabel(skill))}</span><button type="button" class="plain-button" id="toggle-hidden">${hidden.has(skill.id)?'還原到搜尋結果':'在搜尋結果隱藏'}</button></div><details><summary>查看原始用途說明</summary><p class="original-description" data-skill-content>${escape(skill.originalDescription||skill.description||language?.text('此檔案沒有 description 欄位；中文用途依內文整理。')||'此檔案沒有 description 欄位；中文用途依內文整理。')}</p></details><details><summary>查看完整 SKILL.md</summary><pre class="original-text">${escape(skill.body)}</pre></details></div>`;
     $('prompt-preview').textContent=prompt(skill);
     $('task').addEventListener('input',event=>{state.task=event.target.value;$('prompt-preview').textContent=prompt(skill);});
     renderResources();
@@ -269,7 +278,7 @@
     const groups=[...new Set(data.skills.map(s=>s.sourceGroup))];
     const plugins=[...new Set(data.skills.filter(s=>s.plugin).map(s=>s.plugin))];
     const rows=plugins.map(plugin=>{const skills=data.skills.filter(s=>s.plugin===plugin);return `<tr><td>${escape(plugin)}</td><td>${skills.length}</td><td>${escape(skills[0].version)}</td><td>${escape(statusLabel(skills[0]))}</td></tr>`;}).join('');
-    $('manager-body').innerHTML=`<p class="manager-lead">${data.skills.length} 份 Skills 已收錄，${data.skills.filter(s=>s.hasGuide).length} 份有中文用途。收藏與隱藏會套用到所有來源。</p><div class="manager-stats">${groups.map(group=>`<span>${escape(group)} <strong>${data.skills.filter(s=>s.sourceGroup===group).length}</strong></span>`).join('')}</div><div class="manager-actions"><button type="button" data-manage="catalog">匯出 Skills 清單</button><button type="button" data-manage="export">匯出管理設定</button><button type="button" data-manage="import">匯入管理設定</button><button type="button" data-manage="restore">還原全部隱藏項目</button></div><p class="manager-note">「隱藏」只調整本工具的搜尋結果；Plugin 啟用狀態以 Agent 設定為準。目前對話是否已載入，由 Agent 本身管理。</p><h3>Plugins</h3><div class="table-scroll"><table class="source-table"><thead><tr><th>來源</th><th>Skills</th><th>版本</th><th>設定狀態</th></tr></thead><tbody>${rows||'<tr><td colspan="4">尚未找到 plugin Skills。</td></tr>'}</tbody></table></div><details class="source-settings"><summary>設定掃描來源</summary><p class="manager-note">支援 ~/ 家目錄與相對於掃描設定檔所在資料夾的路徑。下載後取代目前使用的 skills-config.json，再按桌面版的「更新 Skills 清單」。安裝版設定位置見技術說明。</p><label class="sr-only" for="source-config">掃描來源 JSON</label><textarea id="source-config" spellcheck="false">${escape(JSON.stringify(data.config,null,2))}</textarea><button type="button" data-manage="config">下載掃描設定</button><ul class="source-diagnostics">${(data.diagnostics||[]).map(root=>`<li>${root.exists?'已找到':'未找到'}：<code>${escape(root.label)}</code></li>`).join('')}</ul></details>${data.readErrors?.length?`<p class="inline-note">有 ${data.readErrors.length} 個檔案讀取失敗，請查看 skills-raw.json 的 readErrors。</p>`:''}`;
+    $('manager-body').innerHTML=`<p class="manager-lead">${data.skills.length} 份 Skills 已收錄，${data.skills.filter(s=>s.hasGuide).length} 份有中文用途。收藏與隱藏會套用到所有來源。</p><div class="manager-stats">${groups.map(group=>`<span>${escape(group)} <strong>${data.skills.filter(s=>s.sourceGroup===group).length}</strong></span>`).join('')}</div><div class="manager-actions"><button type="button" data-manage="catalog">匯出 Skills 清單</button><button type="button" data-manage="export">匯出管理設定</button><button type="button" data-manage="import">匯入管理設定</button><button type="button" data-manage="restore">還原全部隱藏項目</button></div><p class="manager-note">「隱藏」只調整本工具的搜尋結果；Plugin 啟用狀態以 Agent 設定為準。目前對話是否已載入，由 Agent 本身管理。</p><h3>Plugins</h3><div class="table-scroll"><table class="source-table"><thead><tr><th>來源</th><th>Skills</th><th>版本</th><th>設定狀態</th></tr></thead><tbody>${rows||'<tr><td colspan="4">尚未找到 plugin Skills。</td></tr>'}</tbody></table></div><details class="source-settings"><summary>設定掃描來源</summary><p class="manager-note">支援 ~/ 家目錄與相對於掃描設定檔所在資料夾的路徑。下載後取代目前使用的 skills-config.json，再按桌面版的「更新 Skills 清單」。安裝版設定位置見技術說明。</p><label class="sr-only" for="source-config">掃描來源 JSON</label><textarea id="source-config" spellcheck="false">${escape(JSON.stringify(data.config,null,2))}</textarea><button type="button" data-manage="config">下載掃描設定</button><ul class="source-diagnostics">${(data.diagnostics||[]).map(root=>`<li>${root.kind==='warning'?'掃描警告':root.exists?'已找到':'未找到'}：<code>${escape(root.label)}</code>${root.code?` <code>${escape(root.code)}</code>`:''}${root.error?` <span data-skill-content>${escape(root.error)}</span>`:''}</li>`).join('')}</ul></details>${data.readErrors?.length?`<p class="inline-note">有 ${data.readErrors.length} 個檔案讀取失敗，請查看 skills-raw.json 的 readErrors。</p>`:''}`;
   }
   document.addEventListener('input',event=>{if(event.target.matches('[data-resource]')){const item=state.resources[Number(event.target.dataset.resource)];item.path=event.target.value;item.name=resourceName(item.path);const label=event.target.closest('.resource-item').querySelector('.resource-item-heading span');label.textContent=item.name;resourceChanged();}});
   document.addEventListener('change',event=>{if(event.target.matches('[data-resource-selected]')){state.resources[Number(event.target.dataset.resourceSelected)].selected=event.target.checked;resourceChanged();}});
@@ -308,7 +317,57 @@
   $('help-close').addEventListener('click',()=>$('help').close());
   document.addEventListener('keydown',event=>{if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='k'){event.preventDefault();$('search').focus();$('search').select();}if(event.key==='Escape'&&document.activeElement===$('search'))updateQuery('');});
   $('refresh').addEventListener('click',refreshSkills);
+  let translationPreferences=null;
+  async function openTranslationSettings(enable=false){
+    if(!window.skillsDesktop?.translationSettings){toast('請在新版桌面 App 設定 AI 翻譯。');return;}
+    try{
+      translationPreferences=await window.skillsDesktop.translationSettings();
+      const saved=translationPreferences;
+      $('settings-language').value=saved.uiLanguage||language?.locale||'zh-TW';
+      $('translation-enabled').checked=enable||saved.enabled;
+      $('translation-base').value=saved.baseUrl;$('translation-model').value=saved.model;$('translation-limit').value=saved.maxPerRefresh;
+      $('translation-key').value='';$('translation-key').placeholder=saved.hasKey?'已儲存金鑰；留白表示沿用':'貼上你的 API Key';
+      $('translation-key-state').textContent=saved.secureStorageAvailable?(saved.hasKey?'已儲存加密金鑰。':'尚未儲存金鑰。'):'系統安全金鑰儲存目前不可用。';
+      const provider=$('translation-provider');provider.value=[...provider.options].some(v=>v.value===saved.baseUrl)?saved.baseUrl:'custom';
+      $('translation-message').textContent='';$('translation-settings').showModal();
+    }catch(error){toast('無法讀取翻譯設定：'+error.message);}
+  }
+  async function completeTranslationChoice(needed){
+    const no=$('translation-skip'),yes=$('translation-setup');no.disabled=true;yes.disabled=true;
+    try{translationPreferences=await window.skillsDesktop.skipTranslationOnboarding($('onboarding-language').value);$('translation-onboarding').close();if(needed)await openTranslationSettings(true);}
+    catch(error){$('onboarding-error').textContent='無法記住選擇：'+error.message;}
+    finally{no.disabled=false;yes.disabled=false;}
+  }
+  $('translation-open').addEventListener('click',()=>openTranslationSettings());
+  $('translation-close').addEventListener('click',()=>$('translation-settings').close());
+  $('translation-settings').addEventListener('close',()=>{$('translation-key').value='';if(translationPreferences?.uiLanguage)changeLanguage(translationPreferences.uiLanguage);});
+  $('onboarding-language').addEventListener('change',event=>changeLanguage(event.target.value));
+  $('settings-language').addEventListener('change',event=>changeLanguage(event.target.value));
+  $('translation-provider').addEventListener('change',()=>{if($('translation-provider').value!=='custom')$('translation-base').value=$('translation-provider').value;});
+  $('translation-skip').addEventListener('click',()=>completeTranslationChoice(false));
+  $('translation-setup').addEventListener('click',()=>completeTranslationChoice(true));
+  $('translation-onboarding').addEventListener('cancel',event=>{event.preventDefault();completeTranslationChoice(false);});
+  async function persistTranslationSettings(removeKey=false){
+    const saveButton=$('translation-save'),removeButton=$('translation-remove-key');saveButton.disabled=true;removeButton.disabled=true;
+    try{
+      const input=removeKey?{...translationPreferences,removeKey:true}:{uiLanguage:$('settings-language').value,enabled:$('translation-enabled').checked,baseUrl:$('translation-base').value,model:$('translation-model').value,maxPerRefresh:Number($('translation-limit').value),apiKey:$('translation-key').value,removeKey};
+      translationPreferences=await window.skillsDesktop.saveTranslationSettings(input);
+      $('translation-key').value='';$('translation-settings').close();
+      $('translation-status').hidden=false;$('translation-status').textContent=translationPreferences.enabled?'AI 翻譯已啟用，下次更新時套用。':'AI 翻譯未啟用。';
+      toast(removeKey?'已移除 API Key 並關閉翻譯。':'翻譯設定已儲存。');
+    }catch(error){$('translation-message').textContent=error.message;}
+    finally{saveButton.disabled=false;removeButton.disabled=false;}
+  }
+  $('translation-form').addEventListener('submit',event=>{event.preventDefault();persistTranslationSettings();});
+  $('translation-remove-key').addEventListener('click',()=>persistTranslationSettings(true));
   renderNavigation();renderResults();renderDetail();
   // Exposes deterministic search to local regression checks; contains no filesystem capability.
   window.SkillsTool={search:(query,category='all',source='all')=>searchSkills(query,category,'recommended',source).map(({skill,score})=>({name:skill.name,title:skill.title,score})),get count(){return data.skills.length;},get guideCoverage(){return data.skills.filter(s=>s.hasGuide).length;}};
+  if(window.skillsDesktop?.translationSettings){
+    window.skillsDesktop.translationSettings().then(saved=>{
+      translationPreferences=saved;
+      if(saved.uiLanguage)changeLanguage(saved.uiLanguage);
+      if(!saved.onboarded)$('translation-onboarding').showModal();
+    }).catch(()=>toast('翻譯設定暫時無法讀取；搜尋與管理仍可使用。'));
+  }
 })();

@@ -3,6 +3,8 @@ import importlib.util
 import base64
 import json
 import os
+import hashlib
+import re
 from pathlib import Path
 
 BASE = Path(__file__).resolve().parent
@@ -17,7 +19,20 @@ def build():
     scanner = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(scanner)
     DATA.mkdir(parents=True, exist_ok=True)
-    raw = scanner.scan(verbose=False, base=DATA)
+    raw = scanner.scan(verbose=False, base=DATA, write_output=False)
+    raw_output = json.dumps(raw, ensure_ascii=False, indent=2)
+    cache_file = DATA / 'ai-translations.json'
+    cache_entries = {}
+    cache_warning = ''
+    if cache_file.exists():
+        try:
+            cache = json.loads(cache_file.read_text(encoding='utf-8'))
+            cache_entries = cache['entries']
+            if not isinstance(cache_entries, dict):
+                raise ValueError('Invalid cache')
+        except (ValueError, KeyError, TypeError):
+            cache_entries = {}
+            cache_warning = 'AI 翻譯快取格式不正確，已改用原始用途。'
     guides = {}
     guide_text = '\n'.join((BASE / filename).read_text(encoding='utf-8')
                            for filename in ('skill-guide.tsv', 'plugin-guide.tsv'))
@@ -28,8 +43,21 @@ def build():
         guides[name] = dict(category=category, title=title, summary=summary, keywords=keywords.split())
     for skill in raw['skills']:
         guide = guides.get(skill['name'])
+        skill['guideSource'] = 'curated' if guide else 'missing'
+        cache_key = hashlib.sha256((skill['name'] + '\0' + skill['sha256']).encode()).hexdigest()
+        translated = cache_entries.get(cache_key)
+        if not guide and isinstance(translated, dict):
+            title, summary = translated.get('title'), translated.get('summary')
+            keywords = translated.get('keywords')
+            if (translated.get('name') == skill['name'] and translated.get('sourceHash') == skill['sha256']
+                    and isinstance(title, str) and 0 < len(title) <= 80 and re.search(r'[\u3400-\u9fff]', title)
+                    and isinstance(summary, str) and 0 < len(summary) <= 600 and re.search(r'[\u3400-\u9fff]', summary)
+                    and translated.get('category') in CATEGORIES and isinstance(keywords, list)
+                    and len(keywords) <= 12 and all(isinstance(v, str) and 0 < len(v) <= 40 for v in keywords)):
+                guide = dict(title=title, summary=summary, category=translated['category'], keywords=keywords)
+                skill['guideSource'] = 'ai'
         skill.update(guide or dict(category='工具與程式', title=skill['name'],
-                                  summary='新加入的 Skill，可展開查看原始用途說明。', keywords=[]))
+                                  summary='尚未有中文用途，可查看原文或在側邊欄設定 AI 翻譯。', keywords=[]))
         skill['hasGuide'] = guide is not None
         skill['isTemplate'] = skill['name'] == 'template-skill'
         skill['keywords'] = list(skill['keywords'])
@@ -46,6 +74,7 @@ def build():
     raw['skills'].sort(key=lambda skill: (skill['isTemplate'], skill['name'], skill['path']))
     raw['categories'] = CATEGORIES
     raw['uniqueNames'] = len({s['name'] for s in raw['skills']})
+    raw['translationWarning'] = cache_warning
     raw.pop('excluded', None)
     data = json.dumps(raw, ensure_ascii=False).replace('<', '\\u003c').replace('\u2028', '\\u2028').replace('\u2029', '\\u2029')
     html = (BASE / 'tool-shell.html').read_text(encoding='utf-8')
@@ -54,9 +83,10 @@ def build():
         html = html.replace('assets/' + filename, 'data:image/png;base64,' + encoded)
     html = html.replace('/*__STYLES__*/', (BASE / 'tool.css').read_text(encoding='utf-8'))
     html = html.replace('/*__DATA__*/', data)
-    html = html.replace('/*__APP__*/', (BASE / 'tool.js').read_text(encoding='utf-8'))
-    (DATA / 'Skills查詢工具.html').write_text(html, encoding='utf-8')
-    (DATA / 'skills-index.json').write_text(json.dumps(raw, ensure_ascii=False, indent=2), encoding='utf-8')
+    html = html.replace('/*__APP__*/', (BASE / 'ui-language.js').read_text(encoding='utf-8') + '\n' + (BASE / 'tool.js').read_text(encoding='utf-8'))
+    scanner.atomic_outputs([(DATA / 'skills-raw.json', raw_output),
+                            (DATA / 'skills-index.json', json.dumps(raw, ensure_ascii=False, indent=2)),
+                            (DATA / 'Skills查詢工具.html', html)])
     return {'files': len(raw['skills']), 'uniqueNames': raw['uniqueNames'], 'scannedAt': raw['scannedAt'],
             'guideCoverage': sum(s['hasGuide'] for s in raw['skills'])}
 

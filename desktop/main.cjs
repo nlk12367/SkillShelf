@@ -6,6 +6,7 @@ const {pathToFileURL}=require('node:url');
 const {inspectPaths,clipboardResources}=require('./resources.cjs');
 const {refreshCatalog}=require('./catalog.cjs');
 const {locations}=require('./runtime.cjs');
+const {translationService}=require('./translation.cjs');
 let EXPECTED;
 let mainWindow;
 
@@ -37,10 +38,14 @@ app.whenReady().then(async()=>{
   mainWindow.webContents.session.setPermissionRequestHandler((_contents,_permission,callback)=>callback(false));
   mainWindow.webContents.session.webRequest.onBeforeRequest((details,callback)=>callback({cancel:/^https?:/i.test(details.url)}));
   ipcMain.handle('resources:inspect',(event,paths)=>{requireMainFrame(event);return inspectPaths(paths);});
-  ipcMain.handle('catalog:refresh',event=>{requireMainFrame(event);return refreshCatalog();});
+  ipcMain.handle('catalog:refresh',event=>{requireMainFrame(event);return refreshCatalog({translate:true});});
+  ipcMain.handle('translation:settings',event=>{requireMainFrame(event);return translationService().publicSettings();});
+  ipcMain.handle('translation:save',(event,input)=>{requireMainFrame(event);return translationService().saveSettings(input);});
+  ipcMain.handle('translation:skip',(event,language)=>{requireMainFrame(event);return translationService().skipOnboarding(language);});
   ipcMain.handle('resources:choose',async event=>{
     requireMainFrame(event);
-    const selected=await dialog.showOpenDialog(mainWindow,{title:'加入資源檔案',properties:['openFile','multiSelections']});
+    const language=(await translationService().publicSettings()).uiLanguage;
+    const selected=await dialog.showOpenDialog(mainWindow,{title:language==='en'?'Add resource files':'加入資源檔案',properties:['openFile','multiSelections']});
     return selected.canceled?[]:inspectPaths(selected.filePaths);
   });
   ipcMain.handle('resources:paste',async event=>{requireMainFrame(event);return clipboardResources(clipboard);});

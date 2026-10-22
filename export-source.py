@@ -17,6 +17,7 @@ FILES = [
     'assets/app-icon.ico', 'assets/icon-prompt.md',
     'create-desktop-shortcut.ps1', '.gitattributes',
     'desktop/runtime.cjs', 'electron-builder.json', 'scripts/prepare-windows.cjs', 'scripts/verify-installer.ps1', 'verify-packaged.cjs',
+    'desktop/translation.cjs', 'test_translation.cjs', 'verify-translation.cjs', 'ui-language.js',
 ]
 
 

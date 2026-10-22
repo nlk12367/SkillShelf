@@ -18,7 +18,10 @@ const {_electron}=require('playwright');
   try{
     const environment={...process.env,SKILLS_TOOL_USER_DATA:path.join(directory,'profile'),SKILLS_TOOL_TEST_MODE:'1'};delete environment.ELECTRON_RUN_AS_NODE;
     desktop=await _electron.launch({args:[path.join(__dirname,'desktop/main.cjs')],env:environment,timeout:30000});
-    const page=await desktop.firstWindow();const errors=[];page.on('pageerror',error=>errors.push(error.message));
+    const page=await desktop.firstWindow();
+    await page.waitForFunction(()=>window.skillsDesktop&&window.SkillsTool);
+    if(await page.evaluate(async()=>typeof window.skillsDesktop.translationSettings==='function'&&!(await window.skillsDesktop.translationSettings()).onboarded)){await page.locator('#translation-onboarding').waitFor({state:'visible'});await page.locator('#translation-skip').click();await page.locator('#translation-onboarding').waitFor({state:'hidden'});}
+    const errors=[];page.on('pageerror',error=>errors.push(error.message));
     await page.waitForFunction(()=>window.SkillsTool&&window.skillsDesktop);
     // Materialize the current clipboard before any test writes, and restore it
     // in finally. Original clipboard content is never logged or exported.

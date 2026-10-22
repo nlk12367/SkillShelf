@@ -1,7 +1,7 @@
 {
   "name": "skillshelf",
   "productName": "SkillShelf",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "private": true,
   "main": "desktop/main.cjs",
   "description": "Discover, organize, and use your agent skills.",
@@ -15,7 +15,9 @@
     "test:desktop": "node verify-desktop.cjs",
     "test:refresh": "node verify-refresh.cjs",
     "dist:win": "node scripts/prepare-windows.cjs && electron-builder --config electron-builder.json --win nsis --x64 --publish never",
-    "test:packaged": "node verify-packaged.cjs"
+    "test:packaged": "node verify-packaged.cjs",
+    "test:translation": "node --test test_translation.cjs",
+    "test:translation:desktop": "node verify-translation.cjs"
   },
   "devDependencies": {
     "electron": "45.0.0",

@@ -7,7 +7,7 @@ const ROOT=path.resolve(__dirname,'..');
 const VERSION='3.14.9';
 const HASH='3c01d7cfc666f746a6f064f60fb2156ab0ec464d3d738ab796371a46a9bb24a2';
 const URL=`https://www.python.org/ftp/python/${VERSION}/python-${VERSION}-embed-amd64.zip`;
-const FILES=['build-tool.py','scan-skills.py','tool-shell.html','tool.js','tool.css','skill-guide.tsv','plugin-guide.tsv','skills-config.json','desktop/read-file-clipboard.py','assets/app-icon-32.png','assets/app-icon-128.png'];
+const FILES=['build-tool.py','scan-skills.py','tool-shell.html','tool.js','ui-language.js','tool.css','skill-guide.tsv','plugin-guide.tsv','skills-config.json','desktop/read-file-clipboard.py','assets/app-icon-32.png','assets/app-icon-128.png'];
 
 (async()=>{
   if(process.platform!=='win32'||process.arch!=='x64')throw new Error('Build on Windows x64.');

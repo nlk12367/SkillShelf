@@ -5,7 +5,7 @@
   "directories": {"output": "dist/windows", "buildResources": "assets"},
   "asar": true,
   "npmRebuild": false,
-  "files": ["package.json", "desktop/main.cjs", "desktop/preload.cjs", "desktop/catalog.cjs", "desktop/resources.cjs", "desktop/runtime.cjs", "assets/app-icon.ico", "assets/app-icon.png", "LICENSE", "THIRD_PARTY_NOTICES.md"],
+  "files": ["package.json", "desktop/main.cjs", "desktop/preload.cjs", "desktop/catalog.cjs", "desktop/resources.cjs", "desktop/runtime.cjs", "desktop/translation.cjs", "assets/app-icon.ico", "assets/app-icon.png", "LICENSE", "THIRD_PARTY_NOTICES.md"],
   "extraResources": [
     {"from": "dist/package-runtime/python", "to": "python", "filter": ["**/*"]},
     {"from": "dist/package-runtime/tool", "to": "tool", "filter": ["**/*"]}
